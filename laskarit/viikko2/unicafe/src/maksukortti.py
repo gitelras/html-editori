@@ -4,9 +4,14 @@ class Maksukortti:
         self.saldo = saldo
 
     def lataa_rahaa(self, maara):
+        if maara < 0:
+            return
         self.saldo += maara
 
     def ota_rahaa(self, maara):
+        if maara < 0:
+            return
+
         if self.saldo < maara:
             return False
 
