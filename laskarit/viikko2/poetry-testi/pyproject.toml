@@ -12,6 +12,7 @@ cowsay = "^6.1"
 
 [tool.poetry.group.dev.dependencies]
 pytest = "^8.1.1"
+coverage = "^7.4.3"
 
 [build-system]
 requires = ["poetry-core"]
