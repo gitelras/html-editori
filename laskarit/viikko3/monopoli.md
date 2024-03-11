@@ -24,4 +24,25 @@
     Sattuma "1" -- "*" Kortti
     Yhteismaa "1" -- "*" Kortti
     Kortti "1" -- "1" Toiminto
+
+    class Ruutu{
+        +Toiminto toiminto
+    }
+    class NormaaliKatu{
+        +Nimi
+    }
+    class Talo{
+    }
+    class Hotelli{
+    }
+    class Pelaaja{
+        +Raha raha
+    }
+    class Raha{
+    }
+    class Toiminto{
+    }
+    class Kortti{
+        +Toiminto toiminto
+    }
 ```
