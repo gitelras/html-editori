@@ -1,3 +1,7 @@
+# Vaatimusmäärittely
+
+Sovellusta käytetään **HTML- ja CSS-dokumentin** tekemiseen. Käyttäjä voi luoda graafisella käyttöliittymällä mieleisensä _staattisen nettisivun_.
+
 ## Sovelluksen ominaisuuksia
 
 - Käyttäjä voi muokata mieleisensä staattisen nettisivun editorissa asettelemalla siihen tekstiä, värejä ja tyylejä.
