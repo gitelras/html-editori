@@ -1,5 +1,5 @@
 # Työaikakirjanpito
 
-| päivä | aika | mitä tein  |
-| :----:|:-----| :-----|
-| 14.3. | 2    | vaatimusmäärittely |
+| DAY   | TIME H | STARTED            | IN PROGRESS | DONE              |
+| :---: | :----: | :----------------- | :---------- | :---------------- |
+| 14.3. | 2      | vaatimusmäärittely |             | vaatimusmäärittely |
