@@ -1,6 +1,6 @@
 # Ohjelmistotekniikka, harjoitustyö
 
-Sovellusta käytetään **HTML-dokumentin** tekemiseen. Käyttäjä voi luoda graafisella käyttöliittymällä mieleisensä _staattisen nettisivun_.
+Sovellusta käytetään **HTML- ja CSS-dokumentin** tekemiseen. Käyttäjä voi luoda graafisella käyttöliittymällä mieleisensä _staattisen nettisivun_.
 
 ## Sovelluksen ominaisuuksia
 
