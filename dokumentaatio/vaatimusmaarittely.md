@@ -10,3 +10,8 @@ Sovellusta käytetään **HTML- ja CSS-dokumentin** tekemiseen. Käyttäjä voi 
 - Käyttäjä voi itse tehdä dokumentilleen layoutin graafisen käyttöliittymän kautta.
 - Käyttäjä voi luoda yhdellä klikkauksella HTML-dokumentin ja CSS-tiedoston. 
 - Käyttäjä näkee luomansa tiedostot arkistoituna sovelluksessa.
+
+## Toimintaympäistöstä
+
+- Ohjelmiston tulee toimia Linux- ja OSX-käyttöjärjestelmillä varustetuissa koneissa
+- Käyttäjän luomat dokumentit talletetaan paikallisen koneen levylle
