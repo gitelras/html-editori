@@ -3,3 +3,5 @@ __pycache__/
 *.pyc
 .coverage
 htmlcov
+data/database.sqlite
+data/test-database.sqlite
