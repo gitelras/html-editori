@@ -13,5 +13,5 @@ Sovellusta käytetään **HTML- ja CSS-dokumentin** tekemiseen. Käyttäjä voi 
 
 ## Toimintaympäristöstä
 
-- Ohjelmiston tulee toimia Linux- ja OSX-käyttöjärjestelmillä varustetuissa koneissa
+- Sovellus toimii Linux- ja OSX-käyttöjärjestelmillä varustetuissa koneissa
 - Käyttäjän luomat dokumentit talletetaan paikallisen koneen levylle
