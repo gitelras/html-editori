@@ -1,3 +1,5 @@
+from repositories.html_repository import Save
+
 class HTML_builder:
     def __init__(self):
         self.text = ""
