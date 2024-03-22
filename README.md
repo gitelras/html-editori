@@ -1,8 +1,11 @@
-# Ohjelmistotekniikka, harjoitustyö
+# HTML-editori
 
-Sovellusta käytetään **HTML- ja CSS-dokumentin** tekemiseen. Käyttäjä voi luoda graafisella käyttöliittymällä mieleisensä _staattisen nettisivun_. [Lue lisää täältä](/dokumentaatio/vaatimusmaarittely.md)
+Sovellusta käytetään **HTML- ja CSS-dokumentin** tekemiseen. Käyttäjä voi luoda graafisella käyttöliittymällä mieleisensä _staattisen nettisivun_. 
 
-[Laskarit](./laskarit/)
+- [Vaatimusmääritteky](/dokumentaatio/vaatimusmaarittely.md)
+- [Changelog](/dokumentaatio/changelog.md)
+- [Tuntikirjanpito](/dokumentaatio/tuntikirjanpito.md)
+
 
 
 
