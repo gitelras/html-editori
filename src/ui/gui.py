@@ -10,13 +10,11 @@ class MainApplication(Frame):
         self.html_builder = HTML_builder()
         self.pack(fill="both", expand=True)
         self.create_widgets()
-        self.create_fixed_frame()
         self.selected_color = "black"
         self.clicked_x = 0
         self.clicked_y = 0
 # generoitu koodi päättyy
         self.latest_text = ""
-        
 
 # generoitu koodi alkaa       
     def choose_color(self):
@@ -38,7 +36,7 @@ class MainApplication(Frame):
         self.font_size_menu = OptionMenu(self, self.font_size, *(str(x) for x in range(8, 49, 2)))
         self.font_size_menu.pack(side="top", fill="x")
 
-        self.color_button = Button(self, text="Valitse väri", command=self.choose_color)  # Värinvalintanappi
+        self.color_button = Button(self, text="Valitse väri", command=self.choose_color)
         self.color_button.pack(side="top", fill="x")
 
         self.canvas = Canvas(self, bg="white") 
