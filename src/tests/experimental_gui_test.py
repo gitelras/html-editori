@@ -2,7 +2,7 @@ import unittest
 import logging
 from entities.node import Node
 from tkinter import Tk, Canvas
-from ui.testi import draw_node
+from ui.experimental_gui import draw_node
 
 logging.basicConfig(level=logging.DEBUG)
 
