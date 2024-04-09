@@ -20,7 +20,7 @@ Suorita alustustoimenpiteet
 poetry run invoke build
 ```
 
-Käynnistä
+Käynnistä sovellus
 
 ```bash
 poetry run invoke start
