@@ -6,7 +6,7 @@ Sovellusta käytetään **HTML- ja CSS-dokumentin** tekemiseen. Käyttäjä voi 
 - [Changelog](/dokumentaatio/changelog.md)
 - [Tuntikirjanpito](/dokumentaatio/tuntikirjanpito.md)
 
-## Käynnistä sovellus näin
+## Käynnistä sovellus
 
 Asenna projektin riippuvuudet
 
@@ -26,7 +26,7 @@ Käynnistä sovellus
 poetry run invoke start
 ```
 
-## Testaa sovellusta näin
+## Testaa sovellusta
 
 Suorita testit
 
