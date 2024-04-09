@@ -26,7 +26,7 @@ Käynnistä
 poetry run invoke start
 ```
 
-## Testaa sovellusta
+## Testaa sovellusta näin
 
 Suorita testit
 
@@ -40,7 +40,7 @@ Generoi halutessasi testikattavuusraportti
 poetry run invoke coverage-report
 ```
 
-Avaa testikattavuusraportti
+Avaa testikattavuusraportti selaimessa
 
 ```bash
 poetry run invoke show-report
