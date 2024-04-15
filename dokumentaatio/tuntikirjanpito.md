@@ -2,7 +2,7 @@
 
 | TASK               | DAY   | TIME H (19) | STARTED  | IN PROGRESS | DONE |
 | :----------------- | :---: | :----: | :------: | :---------: | :---:|
-| vaatimusmäärittely | 14.3. | 2      | x        |             | x    |
+| vaatimusmäärittely | 14.3. | 2      | x        |      x       | x    |
 | graafinen käyttöliittymä | 18.3.,4.4. | 3 | x | x | |
 | käyttäjän kirjoittama teksti menee html_builderiin | 19.3. | 2 | x |  |x |
 | sovelluslogiikan suunnittelua | 22.3. | 2      | x        | x            |     |
