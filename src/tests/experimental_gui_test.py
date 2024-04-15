@@ -2,9 +2,7 @@ import unittest
 import logging
 from entities.node import Node
 from tkinter import Tk, Canvas
-from ui.experimental_gui import draw_node
-
-logging.basicConfig(level=logging.DEBUG)
+from ui.experimental_gui import MainApplication 
 
 
 class TestDrawnode(unittest.TestCase):
@@ -14,22 +12,20 @@ class TestDrawnode(unittest.TestCase):
         self.canvas_height = 600
         self.canvas = Canvas(
             self.tk, width=self.canvas_width, height=self.canvas_height)
+        self.app = MainApplication(master=self.tk, canvas_width=self.canvas_width, canvas_height=self.canvas_height)
         self.canvas.pack()
 
     def test_draw_root_right(self):
-        logging.debug(f"moi")
-        # self.assertTrue(False)
         root = Node(100, True)
         root.color = "red"
-        draw_node(self.canvas, root, 0, 0,
-                  self.canvas_width, self.canvas_height)
+        all_items = self.app.canvas.find_all()
+        self.app.draw_node(self.app.canvas, root, 0, 0, self.canvas_width, self.canvas_height)
 
         all_items = self.canvas.find_all()
         for item_id in all_items:
             logging.debug(item_id)
             item_type = self.canvas.type(item_id)
             if item_type == 'rectangle':
-                logging.debug(f"Rectangle ID: {item_id}")
                 self.get_rectangle_size(self.canvas, item_id)
 
     def get_rectangle_size(self, canvas, rectangle_id):
@@ -45,8 +41,7 @@ class TestDrawnode(unittest.TestCase):
     def test_draw_root_color(self):
         root = Node(100, True)
         root.color = "red"
-        draw_node(self.canvas, root, 0, 0,
-                  self.canvas_width, self.canvas_height)
+        self.app.draw_node(self.app.canvas, root, 0, 0, self.canvas_width, self.canvas_height)
 
         all_items = self.canvas.find_all()
         for item_id in all_items:
