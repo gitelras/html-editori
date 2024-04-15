@@ -1,7 +1,8 @@
-from repositories.html_repository import Save
-from entities.node import Node
+#from repositories.html_repository import Save
+#from entities.node import Node
 
-class HTML_builder:
+
+class HtmlBuilder:
     def __init__(self):
         self.text = ""
 

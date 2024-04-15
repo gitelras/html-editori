@@ -5,7 +5,7 @@ class Node:
         self.parent = None
         self.size = size
         self.color = "white"
-    
+
     def add_child(self, child):
         self.children.append(child)
         child.parent = self
