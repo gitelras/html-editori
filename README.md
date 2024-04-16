@@ -46,6 +46,13 @@ Avaa testikattavuusraportti selaimessa
 poetry run invoke show-report
 ```
 
+## Pylint
+
+Suorita tiedoston [.pylintrc](./.pylintrc) tarkistukset
+
+```bash
+poetry run invoke lint
+```
 
 
 
