@@ -4,15 +4,23 @@ Koodin pakkausrakenne näyttää tältä:
 
 ```mermaid
 graph TD;
-    ui["ui"]
-    services["services"]
-    repositories["repositories"]
-    entities["entities"]
+    subgraph services ["services"]
+        DrawNode[("DrawNode")]
+        HtmlBuilder[("HtmlBuilder")]
+        TreeBuilder[("TreeBuilder")]
+    end
 
-    ui -.-> services
-    services -.-> repositories
-    services -.-> entities
-    repositories -.-> entities
+    ui[("ui")]
+    repositories[("repositories")]
+    entities[("entities")]
+
+    ui --> services
+    services -->|uses| repositories
+    services -->|uses| entities
+    repositories -->|uses| entities
+
+    classDef default fill:#f9f,stroke:#333,stroke-width:2px;
+    linkStyle default interpolate basis
 ```
 
 - Pakkaus _ui_ sisältää käyttöliittymästä vastaavat luokat, eli käyttäjälle näkyvän sovelluksen osan.
