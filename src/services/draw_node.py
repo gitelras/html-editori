@@ -17,7 +17,6 @@ class DrawNode:
     def draw_node(self, canvas, node, x, y, width, height):
         rect = canvas.create_rectangle(
             x, y, x + width, y + height, fill=node.color) # rectangle id
-        print(rect)
         entry = Entry(canvas, bd=2, width=10)
         entry.place(x=x+5, y=y+5)
 

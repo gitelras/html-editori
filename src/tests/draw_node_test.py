@@ -4,10 +4,8 @@ from entities.node import Node
 from tkinter import Tk, Canvas
 from services.draw_node import DrawNode
 
-
 class TestDrawnode(unittest.TestCase):
     def setUp(self):
-        logging.basicConfig(level=logging.DEBUG, format='%(asctime)s - %(levelname)s - %(message)s')
         self.tk = Tk()
         self.canvas_width = 800
         self.canvas_height = 600
@@ -32,12 +30,8 @@ class TestDrawnode(unittest.TestCase):
 
     def get_rectangle_size(self, canvas, rectangle_id):
         x1, y1, x2, y2 = canvas.coords(rectangle_id)
-        #logging.debug(x1, y1, x2, y2)
-
         width = x2 - x1
         height = y2 - y1
-        #logging.debug(width, height)
-
         return width, height
 
     def test_draw_root_color(self):
