@@ -1,4 +1,4 @@
-from tkinter import Tk, Canvas, Entry, Frame, Button, OptionMenu, StringVar, colorchooser
+from tkinter import Entry
 from services.tree_builder import TreeBuilder
 
 
@@ -16,16 +16,15 @@ class DrawNode:
 
     def draw_node(self, canvas, node, x, y, width, height):
         rect = canvas.create_rectangle(
-            x, y, x + width, y + height, fill=node.color, outline="black")
+            x, y, x + width, y + height, fill=node.color) # rectangle id
+        print(rect)
         entry = Entry(canvas, bd=2, width=10)
-        # Sijoitetaan Entry 5 pikseliä suorakulmion vasemmasta ja yläreunasta
         entry.place(x=x+5, y=y+5)
 
-        def save_text(event, self=self, entry=entry, x=x, y=y):
+        def save_text(_, self=self, entry=entry, x=x, y=y): # _ = event
             canvas.create_text(x+10, y+10, text=entry.get(), anchor="nw",
                                fill=self.selected_color, font=("Helvetica", 12))
 
-        # Kun käyttäjä painaa Enter, teksti tallennetaan ja näytetään canvasilla
         entry.bind("<Return>", save_text)
 
         if node.children:
