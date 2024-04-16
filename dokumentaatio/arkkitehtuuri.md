@@ -30,6 +30,6 @@ graph TD;
 
 ### Sovelluslogiikka
 
-- Luokka DrawNode kuvaa solmun eli div-elementin piirtämistä.
-- Luokka TreeBuilder kuvaa puun rakentamista eli layoutin luomista.
-- Luokka HtmlBuilder kuvaa puun muuntamista html-tiedostoksi. 
+- Luokka [DrawNode](/src/services/draw_node.py) kuvaa solmun eli div-elementin piirtämistä.
+- Luokka [TreeBuilder](/src/services/tree_builder.py) kuvaa puun rakentamista eli layoutin luomista.
+- Luokka [HtmlBuilder](/src/services/html_builder.py) kuvaa puun muuntamista html-tiedostoksi. 
