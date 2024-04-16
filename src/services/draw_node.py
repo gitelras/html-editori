@@ -6,7 +6,8 @@ class DrawNode:
     def __init__(self):
         self.canvas_width = 800
         self.canvas_height = 600
-    
+
+# generoitu koodi alkaa
     def draw_tree(self, canvas):
         tree_builder = TreeBuilder()
         root_node = tree_builder.create_menu_tree()
@@ -44,3 +45,5 @@ class DrawNode:
                     self.draw_node(canvas, child, child_x,
                                    y, child_width, height)
                     child_x += child_width
+
+# generoitu koodi päättyy
