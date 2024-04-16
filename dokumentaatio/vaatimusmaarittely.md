@@ -5,7 +5,9 @@ Sovellusta käytetään **HTML- ja CSS-dokumentin** tekemiseen. Käyttäjä voi 
 ## Sovelluksen ominaisuuksia
 
 - Käyttäjä voi valita mieleisensä layoutin valmiista pohjista.
-- Käyttäjä voi asetella pohjaan tekstiä, värejä ja tyylejä.
+- Käyttäjä näkee valitsemansa layoutin muokkaustilassa. (tehty)
+- Käyttäjä voi valita valikosta värin, fontin, ja fontin koon. (tehty)
+- Käyttäjä voi kirjoittaa pohjaan mieleistään tekstiä ja vaihtaa layoutin väriä.
 - Muokatessa dokumenttia käyttäjä näkee reaaliajassa, miltä dokumentti näyttää selaimessa.
 - Käyttäjä voi luoda yhdellä klikkauksella HTML-dokumentin ja CSS-tiedoston. 
 - Käyttäjä näkee luomansa tiedostot arkistoituna sovelluksessa.
