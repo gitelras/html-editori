@@ -5,7 +5,8 @@ Sovellusta käytetään **HTML- ja CSS-dokumentin** tekemiseen. Käyttäjä voi 
 - [Vaatimusmäärittely](/dokumentaatio/vaatimusmaarittely.md)
 - [Changelog](/dokumentaatio/changelog.md)
 - [Tuntikirjanpito](/dokumentaatio/tuntikirjanpito.md)
-
+- [Arkkitehtuurikuvaus](/dokumentaatio/arkkitehtuuri.md)
+  
 ## Käynnistä sovellus
 
 Asenna projektin riippuvuudet
