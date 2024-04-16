@@ -52,7 +52,6 @@ class MainApplication(Frame):
     def draw(self):
         self.draw_node.draw_tree(self.canvas, self.font_family, self.font_size, self.selected_color)
 
-
 def main():
     root = Tk()
     root.title("Kodokaze")

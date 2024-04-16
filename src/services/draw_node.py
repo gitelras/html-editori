@@ -6,6 +6,9 @@ class DrawNode:
     def __init__(self):
         self.canvas_width = 800
         self.canvas_height = 600
+        self.font_family = "Helvetica"
+        self.font_size = 12
+        self.selected_color = "black"
 
 # generoitu koodi alkaa
     def draw_tree(self, canvas, font_family, font_size, color):
@@ -19,8 +22,7 @@ class DrawNode:
 
     def draw_node(self, canvas, node, x, y, width, height):
         print("tullaanko")
-        rect = canvas.create_rectangle(
-            x, y, x + width, y + height, fill=node.color) # rectangle id
+        canvas.create_rectangle(x, y, x + width, y + height, fill=node.color) # rectangle id
         entry = Entry(canvas, bd=2, width=10)
         entry.place(x=x+5, y=y+5)
 
@@ -30,7 +32,6 @@ class DrawNode:
             print(self.font_family, self.font_size, self.selected_color)
 
         entry.bind("<Return>", save_text)
-
 
         if node.children:
             if node.vertical:
