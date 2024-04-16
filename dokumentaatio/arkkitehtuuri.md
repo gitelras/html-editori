@@ -18,9 +18,6 @@ graph TD;
     services -->|uses| repositories
     services -->|uses| entities
     repositories -->|uses| entities
-
-    classDef default fill:#f9f,stroke:#333,stroke-width:2px;
-    linkStyle default interpolate basis
 ```
 
 - Pakkaus _ui_ sisältää käyttöliittymästä vastaavat luokat, eli käyttäjälle näkyvän sovelluksen osan.
