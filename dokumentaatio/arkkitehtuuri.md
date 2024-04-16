@@ -6,8 +6,8 @@ Koodin pakkausrakenne näyttää tältä:
 graph TD;
     subgraph services ["services"]
         DrawNode[("DrawNode")]
-        HtmlBuilder[("HtmlBuilder")]
-        TreeBuilder[("TreeBuilder")]
+        HtmlBuilder[("TreeBuilder")]
+        TreeBuilder[("HtmlBuilder")]
     end
 
     ui[("ui")]
@@ -25,3 +25,8 @@ graph TD;
 - Pakkaus _repositories_ sisältää tietojen pysyväistallennuksesta vastaavat luokat.
 - Pakkaus _entities_ sisältää sovelluksen datamalleista vastaavat luokat.
 
+### Sovelluslogiikka
+
+- Luokka DrawNode kuvaa solmun eli div-elementin piirtämistä.
+- Luokka TreeBuilder kuvaa puun rakentamista eli layoutin luomista.
+- Luokka HtmlBilder kuvaa puun muuntamista html-tiedostoksi. 
