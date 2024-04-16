@@ -6,18 +6,21 @@ Koodin pakkausrakenne näyttää tältä:
 graph TD;
     subgraph services ["services"]
         DrawNode[("DrawNode")]
-        HtmlBuilder[("TreeBuilder")]
-        TreeBuilder[("HtmlBuilder")]
+        TreeBuilder[("TreeBuilder")]
+        HtmlBuilder[("HtmlBuilder")]
     end
 
     ui[("ui")]
     repositories[("repositories")]
     entities[("entities")]
 
-    ui --> services
-    services -->|uses| repositories
-    services -->|uses| entities
-    repositories -->|uses| entities
+    ui -.-> services
+    services -.-> repositories
+    services -.-> entities
+    repositories -.-> entities
+
+    DrawNode -.-> TreeBuilder
+    HtmlBuilder -.-> DrawNode
 ```
 
 - Pakkaus _ui_ sisältää käyttöliittymästä vastaavat luokat, eli käyttäjälle näkyvän sovelluksen osan.
@@ -29,4 +32,4 @@ graph TD;
 
 - Luokka DrawNode kuvaa solmun eli div-elementin piirtämistä.
 - Luokka TreeBuilder kuvaa puun rakentamista eli layoutin luomista.
-- Luokka HtmlBilder kuvaa puun muuntamista html-tiedostoksi. 
+- Luokka HtmlBuilder kuvaa puun muuntamista html-tiedostoksi. 
