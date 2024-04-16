@@ -1,9 +1,5 @@
 from invoke import task
 
-#@task
-#def start(ctx):
-#    ctx.run("python3 src/index.py", pty=True)
-
 @task
 def start(ctx):
     ctx.run("cd src && python -m ui.experimental_gui", pty=True)
