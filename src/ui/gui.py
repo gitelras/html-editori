@@ -18,7 +18,7 @@ class MainApplication(Frame):
         self.latest_text = ""
 
 # generoitu koodi alkaa
-    def choose_color(self): # services
+    def choose_color(self):
         color_code = colorchooser.askcolor(title="Valitse väri")[1]
         if color_code:
             self.selected_color = color_code
