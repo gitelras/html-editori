@@ -14,17 +14,18 @@ class MainApplication(Frame):
         self.selected_color = "black"
         self.font_family = "Helvetica"
         self.font_size = 12
-        self.draw_node = DrawNode()
+        
         self.canvas = Canvas(self, bg="white", width=800, height=600)
         self.canvas.pack(fill="both", expand=True, side="left")
+        self.draw_node = DrawNode(self.canvas)
         self.create_widgets()
         self.draw()
 
     def choose_color(self):
         color_code = colorchooser.askcolor(title="Valitse väri")[1]
         if color_code:
-            self.selected_color = color_code
-            self.draw()
+            self.draw_node.selected_color = color_code
+            self.draw_node.font_family = self.font_family
 
     def create_widgets(self):
         font_family_var = StringVar(self)
@@ -41,16 +42,18 @@ class MainApplication(Frame):
         self.color_button = Button(self, text="Valitse väri", command=self.choose_color)
         self.color_button.pack(side="top", fill="x")
 
-    def update_font_family(self, new_family):
+    def update_font_family(self, new_family):   
         self.font_family = new_family
+        self.draw_node.font = new_family
         self.draw()
 
     def update_font_size(self, new_size):
         self.font_size = int(new_size)
+        self.draw_node.font_size = self.font_size
         self.draw()
 
     def draw(self):
-        self.draw_node.draw_tree(self.canvas, self.font_family, self.font_size, self.selected_color)
+        self.draw_node.draw_tree()
 
 def main():
     root = Tk()
