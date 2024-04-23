@@ -4,7 +4,7 @@ from services.tree_builder import TreeBuilder
 # generoitu koodi alkaa
 
 class DrawNode:
-    def __init__(self, canvas, master=None):
+    def __init__(self, canvas, entry, master=None):
         self.master = master
         self.canvas = canvas
         self.canvas.bind("<Button-1>", self.on_canvas_click)
@@ -16,6 +16,10 @@ class DrawNode:
         self.tree_builder = TreeBuilder()
         self.root_node = self.tree_builder.create_menu_tree()
         self.active_node = None
+        self.entry = entry
+    
+    def get_active_node(self):
+        return self.active_node
 
     def draw_tree(self):
         self.draw_node(self.canvas, self.root_node, 0, 0,
@@ -31,6 +35,18 @@ class DrawNode:
             self.active_node = result_node
         else:
             print("Klikkaus ei osunut mihinkään solmuun.")
+
+    def on_entry_return(self, event):
+        if self.active_node:
+            print("Here we go")
+            print(self.active_node.color)
+            self.active_node.text_color = self.selected_color
+            self.active_node.font_size = self.font_size
+            self.active_node.font = self.font
+            print(self.entry.get())
+            self.active_node.text = self.entry.get()
+            print(self.active_node.text)
+            self.draw_tree()
 
     def get_node(self, canvas, node, x, y, width, height, click_x, click_y):
         if x <= click_x <= x + width and y <= click_y <= y + height:
@@ -60,30 +76,28 @@ class DrawNode:
     def draw_node(self, canvas, node, x, y, width, height):
         print("tullaanko", node.color, node.text, node.font_size, node.font)
         canvas.create_rectangle(x, y, x + width, y + height, fill=node.color) # rectangle id
-        canvas.create_text(x+10, y+10, text=node.text, anchor="nw",
-                               fill="black", font=(node.font, node.font_size))
+       # canvas.create_text(x+10, y+10, text=node.text, anchor="nw",
+         #                     fill="black", font=(node.font, node.font_size))
         
-        entry = Entry(canvas, bd=2, width=10) # vain yksi iso entrykenttä. käyttäjä painaa ensin nodea 
+       # entry = Entry(canvas, bd=2, width=10) # vain yksi iso entrykenttä. käyttäjä painaa ensin nodea 
                                                 #ja sitten kirjoittaa kenttään tekstin ja painaa enter. 
-        entry.place(x=x+5, y=y+5)
+      #  entry.place(x=x+5, y=y+5)
 
-        def save_text(_, self=self, entry=entry, x=x, y=y):
-            print("Here we go")
-            print(self.active_node.color)
-            self.active_node.text_color = self.selected_color
-            print(self.active_node.text_color)
-            self.active_node.font_size = self.font_size
-            self.active_node.font = self.font
-            print(entry.get())
-            self.active_node.text = entry.get()
-            print(self.active_node.text)
-            self.draw_tree()
-
+       # def save_text(_, self=self, entry=entry, x=x, y=y):
+          #  print("Here we go")
+          ##  print(self.active_node.color)
+          #  self.active_node.text_color = self.selected_color
+          #  self.active_node.font_size = self.font_size
+           # self.active_node.font = self.font
+          #  print(entry.get())
+           # self.active_node.text = entry.get()
+          #  print(self.active_node.text)
+          #  self.draw_tree()
+#
         canvas.create_text(x+10, y+10, text=node.text, anchor="nw",
                  fill=node.text_color, font=(node.font, node.font_size))
-        print(node.font)
-
-        entry.bind("<Return>", save_text)
+       
+      #  entry.bind("<Return>", save_text)
 
         if node.children:
             if node.vertical:

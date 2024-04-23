@@ -17,9 +17,20 @@ class MainApplication(Frame):
         
         self.canvas = Canvas(self, bg="white", width=800, height=600)
         self.canvas.pack(fill="both", expand=True, side="left")
-        self.draw_node = DrawNode(self.canvas)
+       # self.create_sidebar()
         self.create_widgets()
+        self.create_entry()
+        self.draw_node = DrawNode(self.canvas, self.entry)
         self.draw()
+
+    #def create_sidebar(self):
+    #    self.sidebar = Frame(self, width=200, bg='lightgray')
+    #    self.sidebar.pack(fill='y', side='right', expand=False)
+
+    def create_entry(self):
+        self.entry = Entry(self.canvas, bd=2, width=10)
+        self.entry.place(x=500+5, y=540+5)
+        self.entry.bind("<Return>", lambda event: self.draw_node.on_entry_return(event))
 
     def choose_color(self):
         color_code = colorchooser.askcolor(title="Valitse väri")[1]
