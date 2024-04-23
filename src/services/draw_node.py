@@ -75,29 +75,9 @@ class DrawNode:
 
     def draw_node(self, canvas, node, x, y, width, height):
         print("tullaanko", node.color, node.text, node.font_size, node.font)
-        canvas.create_rectangle(x, y, x + width, y + height, fill=node.color) # rectangle id
-       # canvas.create_text(x+10, y+10, text=node.text, anchor="nw",
-         #                     fill="black", font=(node.font, node.font_size))
-        
-       # entry = Entry(canvas, bd=2, width=10) # vain yksi iso entrykenttä. käyttäjä painaa ensin nodea 
-                                                #ja sitten kirjoittaa kenttään tekstin ja painaa enter. 
-      #  entry.place(x=x+5, y=y+5)
-
-       # def save_text(_, self=self, entry=entry, x=x, y=y):
-          #  print("Here we go")
-          ##  print(self.active_node.color)
-          #  self.active_node.text_color = self.selected_color
-          #  self.active_node.font_size = self.font_size
-           # self.active_node.font = self.font
-          #  print(entry.get())
-           # self.active_node.text = entry.get()
-          #  print(self.active_node.text)
-          #  self.draw_tree()
-#
+        canvas.create_rectangle(x, y, x + width, y + height, fill=node.color)
         canvas.create_text(x+10, y+10, text=node.text, anchor="nw",
                  fill=node.text_color, font=(node.font, node.font_size))
-       
-      #  entry.bind("<Return>", save_text)
 
         if node.children:
             if node.vertical:
