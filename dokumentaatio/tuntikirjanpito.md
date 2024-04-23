@@ -1,9 +1,9 @@
 # Työaikakirjanpito
 
-| TASK               | DAY   | TIME H (TOTAL 27) | STARTED  | IN PROGRESS | DONE |
+| TASK               | DAY   | TIME H (TOTAL 31) | STARTED  | IN PROGRESS | DONE |
 | :----------------- | :---: | :----: | :------: | :---------: | :---:|
 | vaatimusmäärittely | 14.3. | 2      | x        |      x       | x    |
-| graafinen käyttöliittymä | 18.3.,4.4.,16.4. | 1 | x | x | |
+| graafinen käyttöliittymä | 18.3.,4.4.,16.4.,23.4. | 3 | x | x | |
 | käyttäjän kirjoittama teksti menee html_builderiin | 19.3. | 2 | x | x | |
 | sovelluslogiikan suunnittelua | 22.3. | 2      | x        | x            |     |
 | diveistä rakentuu html puu | 22.3. | 1      | x        | x            |     |
@@ -13,4 +13,5 @@
 | luotu kirjoituskentät nodeille | 15.4. | 2 | x | x | x |
 | käyttöliittymän refaktorointia | 16.4. | 2 | x | x | x |
 | testattu puun rakentamista | 16.4.| 1 | x | x | x |
-| fontin, värin ja kirjasinkoon tallentaminen puuhun | 19.4., 23.4.| 4 | x | x | x |
+| fontin, värin ja kirjasinkoon tallentaminen puuhun | 19.4., 22.4.| 4 | x | x | x |
+| testit noden klikkaukselle | 23.4.| 2 | x | x | x |
