@@ -7,12 +7,12 @@ class DrawNode:
     def __init__(self, canvas, entry, master=None):
         self.master = master
         self.canvas = canvas
-        self.canvas.bind("<Button-1>", self.on_canvas_click)
         self.canvas_width = 800
         self.canvas_height = 600
         self.font = "Helvetica"
         self.font_size = 12
         self.selected_color = "black"
+        self.canvas.bind("<Button-1>", self.on_canvas_click)
         self.tree_builder = TreeBuilder()
         self.root_node = self.tree_builder.create_menu_tree()
         self.active_node = None
@@ -28,8 +28,8 @@ class DrawNode:
     def on_canvas_click(self, event):
         print("LOL")
         print(f"Klikattiin koordinaateissa: ({event.x}, {event.y})")
-        result_node = self.get_node(self.canvas, self.root_node, 0, 0,
-                                    self.canvas_width, self.canvas_height, event.x, event.y)
+        result_node = self.get_node(self.root_node, 0, 0,
+                                    self.canvas_width, self.canvas_height, (event.x, event.y))
         if result_node:
             print(f"Klikattu solmu: {result_node}")
             print(result_node.color)
@@ -49,8 +49,8 @@ class DrawNode:
             print(self.active_node.text)
             self.draw_tree()
 
-    def get_node(self, canvas, node, x, y, width, height, click_x, click_y):
-        if x <= click_x <= x + width and y <= click_y <= y + height:
+    def get_node(self, node, x, y, width, height, click_point):
+        if x <= click_point[0] <= x + width and y <= click_point[1] <= y + height:
             if not node.children:
                 return node
             if node.vertical:
@@ -58,8 +58,8 @@ class DrawNode:
                 size_sum = sum(child.size for child in node.children)
                 for child in node.children:
                     child_height = height * (child.size / size_sum)
-                    result = self.get_node(canvas, child, x, child_y, width, child_height,
-                                           click_x, click_y)
+                    result = self.get_node(child, x, child_y, width, child_height,
+                                           click_point)
                     if result:
                         return result
                     child_y += child_height
@@ -68,8 +68,8 @@ class DrawNode:
                 size_sum = sum(child.size for child in node.children)
                 for child in node.children:
                     child_width = width * (child.size / size_sum)
-                    result = self.get_node(canvas, child, child_x, y, child_width, height,
-                                           click_x, click_y)
+                    result = self.get_node(child, child_x, y, child_width, height,
+                                           click_point)
                     if result:
                         return result
                     child_x += child_width

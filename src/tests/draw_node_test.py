@@ -17,7 +17,6 @@ class TestDrawnode(unittest.TestCase):
         self.node_child = Node(20, True)
         self.node_horisontal_child = Node(80, False)
 
-
     def test_draw_root_right(self):
         self.node.color = "red"
         self.draw_node.draw_node(self.canvas, self.node, 0, 0, 800, 600)
