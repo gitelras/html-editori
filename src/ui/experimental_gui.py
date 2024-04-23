@@ -1,5 +1,5 @@
 
-from tkinter import Tk, Canvas, Entry, Frame, Button, OptionMenu, StringVar, colorchooser
+from tkinter import Tk, Canvas, Entry, Frame, Button, OptionMenu, StringVar, colorchooser, Label
 from services.draw_node import DrawNode
 # generoitu koodi alkaa
 
@@ -19,6 +19,10 @@ class MainApplication(Frame):
         self.draw()
 
     def create_entry(self):
+        instruction_label = Label(self, text=("Klikkaa ensin haluamaasi aluetta, kirjoita teksti kenttään ja paina enter"),
+                                     width=60,
+                                     anchor='w')
+        instruction_label.pack(side="top", padx=0, pady=10)
         self.entry = Entry(self, bd=0.5, width=60)
         self.entry.pack(side="top", padx=0, pady=10)
         self.entry.bind("<Return>", lambda event: self.draw_node.on_entry_return(event))
