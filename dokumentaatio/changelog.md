@@ -13,3 +13,9 @@
 - Testattu Tree_Builder-luokan create_menu_tree-funktiota.
 - Luotu nykyiseen käyttöliittymään experimental_gui.py valikko, josta käyttäjä voi valita fontin, fontin koon ja värin.
   
+## Viikko 5
+
+- Testattu, että tiettyä nodea voi klikata.
+- Käyttäjä voi kirjoittaa mieleistään tekstiä nodeihin.
+- Kirjoitettu teksti tallentuu puuhun.
+- Paranneltu käyttöliittymää.
