@@ -12,7 +12,7 @@ class TestDrawnode(unittest.TestCase):
         self.canvas = Canvas(self.tk, width=800, height=600)
         self.canvas.pack()
         self.tk.update()
-        self.draw_node = DrawNode(self.canvas)
+        self.draw_node = DrawNode(self.canvas, None)
         self.node = Node(100, True)
         self.node_child = Node(20, True)
         self.node_horisontal_child = Node(80, False)

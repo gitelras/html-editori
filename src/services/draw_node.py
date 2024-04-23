@@ -1,4 +1,4 @@
-from tkinter import Entry, Canvas, Tk
+
 from services.tree_builder import TreeBuilder
 
 # generoitu koodi alkaa
@@ -17,7 +17,7 @@ class DrawNode:
         self.root_node = self.tree_builder.create_menu_tree()
         self.active_node = None
         self.entry = entry
-    
+
     def get_active_node(self):
         return self.active_node
 
@@ -28,7 +28,8 @@ class DrawNode:
     def on_canvas_click(self, event):
         print("LOL")
         print(f"Klikattiin koordinaateissa: ({event.x}, {event.y})")
-        result_node = self.get_node(self.canvas, self.root_node, 0, 0, self.canvas_width, self.canvas_height, event.x, event.y)
+        result_node = self.get_node(self.canvas, self.root_node, 0, 0,
+                                    self.canvas_width, self.canvas_height, event.x, event.y)
         if result_node:
             print(f"Klikattu solmu: {result_node}")
             print(result_node.color)
@@ -36,7 +37,7 @@ class DrawNode:
         else:
             print("Klikkaus ei osunut mihinkään solmuun.")
 
-    def on_entry_return(self, event):
+    def on_entry_return(self, _):
         if self.active_node:
             print("Here we go")
             print(self.active_node.color)
@@ -57,17 +58,18 @@ class DrawNode:
                 size_sum = sum(child.size for child in node.children)
                 for child in node.children:
                     child_height = height * (child.size / size_sum)
-                    result = self.get_node(canvas, child, x, child_y, width, child_height, click_x, click_y)
+                    result = self.get_node(canvas, child, x, child_y, width, child_height,
+                                           click_x, click_y)
                     if result:
                         return result
                     child_y += child_height
             else:
-                print(f"Checking node at ({x}, {y}) with width {width} and height {height}, {click_x}, {click_y}, {node.vertical}")
                 child_x = x
                 size_sum = sum(child.size for child in node.children)
                 for child in node.children:
                     child_width = width * (child.size / size_sum)
-                    result = self.get_node(canvas, child, child_x, y, child_width, height, click_x, click_y)
+                    result = self.get_node(canvas, child, child_x, y, child_width, height,
+                                           click_x, click_y)
                     if result:
                         return result
                     child_x += child_width
@@ -94,10 +96,3 @@ class DrawNode:
                     child_width = width * (child.size / size_sum)
                     self.draw_node(canvas, child, child_x, y, child_width, height)
                     child_x += child_width
-
-if __name__ == "__main__":
-    root = Tk()
-    app = DrawNode(master=root)
-    root.mainloop()
-
-    # generoitu koodi päättyy

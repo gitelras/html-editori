@@ -11,7 +11,6 @@ class MainApplication(Frame):
         self.selected_color = "black"
         self.font_family = "Helvetica"
         self.font_size = 12
-        
         self.canvas = Canvas(self, bg="white", width=800, height=600)
         self.canvas.pack(fill="both", expand=True, side="left")
         self.create_widgets()
