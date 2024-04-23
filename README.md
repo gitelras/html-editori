@@ -6,6 +6,7 @@ Sovellusta käytetään **HTML- ja CSS-dokumentin** tekemiseen. Käyttäjä voi 
 - [Changelog](/dokumentaatio/changelog.md)
 - [Tuntikirjanpito](/dokumentaatio/tuntikirjanpito.md)
 - [Arkkitehtuurikuvaus](/dokumentaatio/arkkitehtuuri.md)
+- [Release](https://github.com/gitelras/ot-harjoitustyo/releases/tag/viikko5)
   
 ## Käynnistä sovellus
 
