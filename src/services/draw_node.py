@@ -62,7 +62,8 @@ class DrawNode:
         canvas.create_text(x+10, y+10, text=node.text, anchor="nw",
                                fill="black", font=(node.font, node.font_size))
         
-        entry = Entry(canvas, bd=2, width=10)
+        entry = Entry(canvas, bd=2, width=10) # vain yksi iso entrykenttä. käyttäjä painaa ensin nodea 
+                                                #ja sitten kirjoittaa kenttään tekstin ja painaa enter. 
         entry.place(x=x+5, y=y+5)
 
         def save_text(_, self=self, entry=entry, x=x, y=y):

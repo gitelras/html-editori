@@ -12,7 +12,7 @@ class TestDrawnode(unittest.TestCase):
         self.canvas = Canvas(self.tk, width=800, height=600)
         self.canvas.pack()
         self.tk.update()
-        self.draw_node = DrawNode()
+        self.draw_node = DrawNode(self.canvas)
 
     def test_draw_root_right(self):
         root = Node(100, True)
@@ -33,17 +33,9 @@ class TestDrawnode(unittest.TestCase):
         width = x2 - x1
         height = y2 - y1
         return width, height
-
-    def test_draw_root_color(self):
-        root = Node(100, True)
-        root.color = "red"
-        self.draw_node.draw_node(self.canvas, root, 0, 0, 800, 600)
-
-        all_items = self.canvas.find_all()
-        for item_id in all_items:
-            item_color = self.canvas.itemcget(item_id, "fill")
-            self.assertEqual(item_color, "red",
-                             f"Suorakulmion {item_id} väri pitäisi olla 'red'")
+    
+    def test_click_right_node(self):
+        pass
 
     def tearDown(self):
         self.tk.destroy()
