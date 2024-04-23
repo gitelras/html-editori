@@ -18,4 +18,4 @@
 - Testattu, että tiettyä nodea voi klikata.
 - Käyttäjä voi kirjoittaa mieleistään tekstiä nodeihin.
 - Kirjoitettu teksti tallentuu puuhun.
-- Paranneltu käyttöliittymää.
+- Paranneltu graafista käyttöliittymää kirjoituskentän osalta.
