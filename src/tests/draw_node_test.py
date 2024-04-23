@@ -46,12 +46,12 @@ class TestDrawnode(unittest.TestCase):
         result = self.draw_node.get_node(self.canvas, self.node, 0, 0, self.canvas_width, self.canvas_height, 524, 66)
         self.assertEqual(self.node_child, result)
 
-    def test_click_horisontal_child_node(self):
-        self.node.vertical = True 
+    def test_click_horisontal_node(self):
+        self.node.vertical = False
         self.node.add_child(self.node_child)  
         self.node.add_child(self.node_horisontal_child) 
         self.node_horisontal_child.vertical = False
-        result = self.draw_node.get_node(self.canvas, self.node, 0, 0, self.canvas_width, self.canvas_height, 350, 179)
+        result = self.draw_node.get_node(self.canvas, self.node, 0, 0, self.canvas_width, self.canvas_height, 489, 201)
         self.assertEqual(self.node_horisontal_child, result)
 
     def tearDown(self):

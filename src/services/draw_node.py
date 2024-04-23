@@ -46,6 +46,7 @@ class DrawNode:
                         return result
                     child_y += child_height
             else:
+                print(f"Checking node at ({x}, {y}) with width {width} and height {height}, {click_x}, {click_y}, {node.vertical}")
                 child_x = x
                 size_sum = sum(child.size for child in node.children)
                 for child in node.children:
