@@ -13,11 +13,14 @@ class TestDrawnode(unittest.TestCase):
         self.canvas.pack()
         self.tk.update()
         self.draw_node = DrawNode(self.canvas)
+        self.node = Node(100, True)
+        self.node_child = Node(20, True)
+        self.node_horisontal_child = Node(80, False)
+
 
     def test_draw_root_right(self):
-        root = Node(100, True)
-        root.color = "red"
-        self.draw_node.draw_node(self.canvas, root, 0, 0, 800, 600)
+        self.node.color = "red"
+        self.draw_node.draw_node(self.canvas, self.node, 0, 0, 800, 600)
         self.tk.update()
         all_items = self.canvas.find_all()
 
@@ -34,8 +37,22 @@ class TestDrawnode(unittest.TestCase):
         height = y2 - y1
         return width, height
     
-    def test_click_right_node(self):
-        pass
+    def test_click_root_node(self):
+        result = self.draw_node.get_node(self.canvas, self.node, 0, 0, self.canvas_width, self.canvas_height, 524, 66)
+        self.assertEqual(self.node, result)
+    
+    def test_click_child_node(self):
+        self.node.add_child(self.node_child)
+        result = self.draw_node.get_node(self.canvas, self.node, 0, 0, self.canvas_width, self.canvas_height, 524, 66)
+        self.assertEqual(self.node_child, result)
+
+    def test_click_horisontal_child_node(self):
+        self.node.vertical = True 
+        self.node.add_child(self.node_child)  
+        self.node.add_child(self.node_horisontal_child) 
+        self.node_horisontal_child.vertical = False
+        result = self.draw_node.get_node(self.canvas, self.node, 0, 0, self.canvas_width, self.canvas_height, 350, 179)
+        self.assertEqual(self.node_horisontal_child, result)
 
     def tearDown(self):
         self.tk.destroy()

@@ -6,7 +6,7 @@ class TestTreeBuilder(unittest.TestCase):
         self.tree_builder = TreeBuilder()
 
     def test_build_root_right(self):
-        root =self.tree_builder.create_menu_tree()
+        root = self.tree_builder.create_menu_tree()
         self.assertEqual(root.size, 100)
         self.assertEqual(root.color, "white")
         self.assertTrue(root.vertical)
