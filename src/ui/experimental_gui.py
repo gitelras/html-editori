@@ -1,6 +1,11 @@
 
-from tkinter import Tk, Canvas, Entry, Frame, Button, OptionMenu, StringVar, colorchooser, Label
+from tkinter import Tk, Canvas, Entry, Frame, Button, OptionMenu, StringVar, colorchooser, Label, Toplevel
 from services.draw_node import DrawNode
+from entities.node import Node
+from services.html_builder import HtmlBuilder
+import webbrowser
+import tempfile
+import os
 # generoitu koodi alkaa
 
 class MainApplication(Frame):
@@ -8,15 +13,13 @@ class MainApplication(Frame):
         super().__init__(master)
         self.master = master
         self.pack(fill="both", expand=True)
-        #self.selected_color = "black"
-        #self.font_family = "Helvetica"
-        #self.font_size = 12
         self.canvas = Canvas(self, bg="white", width=800, height=600)
         self.canvas.pack(fill="both", expand=True, side="left")
         self.create_entry()
         self.draw_node = DrawNode(self.canvas, self.entry)
         self.create_widgets()
         self.draw()
+        self.html_builder = HtmlBuilder()
 
     def create_entry(self):
         instruction_label = Label(self, text=("Klikkaa ensin haluamaasi aluetta, kirjoita teksti kenttään ja paina enter"),
@@ -47,6 +50,9 @@ class MainApplication(Frame):
         self.color_button = Button(self, text="Valitse väri", command=self.choose_color)
         self.color_button.pack(side="top", fill="x")
 
+        self.html_button = Button(self, text="Näytä HTML", command=self.show_html)
+        self.html_button.pack(side="top", fill="x")
+
     def update_font_family(self, new_family):   
         self.draw_node.font = new_family
         self.draw()
@@ -57,6 +63,14 @@ class MainApplication(Frame):
 
     def draw(self):
         self.draw_node.draw_tree()
+    
+    def show_html(self):
+        # Tässä luodaan HTML-dokumentti puurakenteesta
+        html_content = self.html_builder.html_document(self.draw_node.root_node)
+        # Tallennetaan HTML sisältö väliaikaistiedostoon ja avataan se selaimessa
+        with tempfile.NamedTemporaryFile('w', delete=False, suffix='.html') as f:
+            f.write(html_content)
+            webbrowser.open('file://' + f.name)
 
 def main():
     root = Tk()

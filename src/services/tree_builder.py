@@ -28,7 +28,3 @@ class TreeBuilder:
             node_d.add_child(child_node)
 
         return root
-
-    def import_text(self, text):
-        self.text = text
-        print(self.text)

@@ -55,23 +55,25 @@ class DrawNode:
                 return node
             if node.vertical:
                 child_y = y
-                size_sum = sum(child.size for child in node.children)
-                for child in node.children:
-                    child_height = height * (child.size / size_sum)
-                    result = self.get_node(child, x, child_y, width, child_height,
-                                           click_point)
-                    if result:
-                        return result
-                    child_y += child_height
+                child_x  = x
             else:
                 child_x = x
-                size_sum = sum(child.size for child in node.children)
-                for child in node.children:
+                child_y = y
+            size_sum = sum(child.size for child in node.children)
+            for child in node.children:
+                if node.vertical:
+                    child_height = height * (child.size / size_sum)
+                    child_width = width
+                else:
+                    child_height = height
                     child_width = width * (child.size / size_sum)
-                    result = self.get_node(child, child_x, y, child_width, height,
+                result = self.get_node(child, child_x, child_y, child_width, child_height,
                                            click_point)
-                    if result:
-                        return result
+                if result:
+                    return result
+                if node.vertical:
+                    child_y += child_height
+                else:
                     child_x += child_width
         return None
 
