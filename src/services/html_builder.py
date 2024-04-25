@@ -4,10 +4,19 @@ class HtmlBuilder:
     def __init__(self):
         self.text = ""
 
+# generoitu koodi alkaa
     def generate_html(self, node, width=100, height=100, x_offset=0, y_offset=0):
         x_pos = f"left: {x_offset}%; top: {y_offset}%;"
-        style = f'position: absolute; {x_pos} width: {width}%; height: {height}%; background-color: {node.color}; ' \
-                f'color: {node.text_color}; font-family: {node.font}; font-size: {node.font_size}px; overflow: hidden;'
+        style = (
+            f'position: absolute; {x_pos} '
+            f'width: {width}%; '
+            f'height: {height}%; '
+            f'background-color: {node.color}; '
+            f'color: {node.text_color}; '
+            f'font-family: {node.font}; '
+            f'font-size: {node.font_size}px; '
+            'overflow: hidden;'
+        )
 
         html = f'<div style="{style}">'
         if node.text:
@@ -46,6 +55,4 @@ class HtmlBuilder:
     {self.generate_html(root, 100, 100)}
     </body>
     </html>"""
-
-
-    
+# generoitu koodi päättyy
