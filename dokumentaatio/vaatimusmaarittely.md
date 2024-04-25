@@ -9,7 +9,7 @@ Sovellusta käytetään **HTML-dokumentin** tekemiseen. Käyttäjä voi luoda gr
 - Käyttäjä voi valita valikosta värin, fontin ja fontin koon. (tehty)
 - Käyttäjä voi kirjoittaa pohjaan mieleistään tekstiä. (tehty)
 - Käyttäjä voi vaihtaa layoutin väriä.
-- Käyttäjä näkee, miltä dokumentti näyttää selaimessa.
+- Käyttäjä näkee, miltä dokumentti näyttää selaimessa. (tehty)
 - Käyttäjä voi luoda yhdellä klikkauksella HTML-dokumentin.
 - Käyttäjä näkee luomansa tiedostot arkistoituna sovelluksessa.
 
