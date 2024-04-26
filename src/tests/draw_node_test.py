@@ -37,12 +37,12 @@ class TestDrawnode(unittest.TestCase):
         return width, height
     
     def test_click_root_node(self):
-        result = self.draw_node.get_node(self.canvas, self.node, 0, 0, self.canvas_width, self.canvas_height, 524, 66)
+        result = self.draw_node.get_node(self.node, 0, 0, self.canvas_width, self.canvas_height, (524, 66))
         self.assertEqual(self.node, result)
     
     def test_click_child_node(self):
         self.node.add_child(self.node_child)
-        result = self.draw_node.get_node(self.canvas, self.node, 0, 0, self.canvas_width, self.canvas_height, 524, 66)
+        result = self.draw_node.get_node(self.node, 0, 0, self.canvas_width, self.canvas_height, (524, 66))
         self.assertEqual(self.node_child, result)
 
     def test_click_horisontal_node(self):
@@ -50,7 +50,7 @@ class TestDrawnode(unittest.TestCase):
         self.node.add_child(self.node_child)  
         self.node.add_child(self.node_horisontal_child) 
         self.node_horisontal_child.vertical = False
-        result = self.draw_node.get_node(self.canvas, self.node, 0, 0, self.canvas_width, self.canvas_height, 489, 201)
+        result = self.draw_node.get_node(self.node, 0, 0, self.canvas_width, self.canvas_height, (489, 201))
         self.assertEqual(self.node_horisontal_child, result)
 
     def tearDown(self):
