@@ -1,6 +1,6 @@
 # Työaikakirjanpito
 
-| TASK               | DAY   | TIME H (TOTAL 35) | STARTED  | IN PROGRESS | DONE |
+| TASK               | DAY   | TIME H (TOTAL 39) | STARTED  | IN PROGRESS | DONE |
 | :----------------- | :---: | :----: | :------: | :---------: | :---:|
 | vaatimusmäärittely | 14.3. | 2      | x        |      x       | x    |
 | graafinen käyttöliittymä | 18.3.,4.4.,16.4.,23.4. | 3 | x | x | |
@@ -16,3 +16,5 @@
 | fontin, värin ja kirjasinkoon tallentaminen puuhun | 19.4., 22.4.| 4 | x | x | x |
 | testit noden klikkaukselle | 23.4.| 2 | x | x | x |
 | DrawNode-luokan refaktorointia | 23.4. | 2 | x | x | x |
+| tietokantayhteys luotu | 29.4. | 2 | x | x | x |
+| testi html-dokumentin generoimiselle | 30.4. | 2 | x | x | x |
