@@ -2,6 +2,7 @@
 
 Sovellusta käytetään **HTML-dokumentin** tekemiseen. Käyttäjä voi luoda graafisella käyttöliittymällä mieleisensä _staattisen nettisivun_. 
 
+- [Käyttöohje](/dokumentaatio/kayttoohje.md)
 - [Vaatimusmäärittely](/dokumentaatio/vaatimusmaarittely.md)
 - [Changelog](/dokumentaatio/changelog.md)
 - [Tuntikirjanpito](/dokumentaatio/tuntikirjanpito.md)
