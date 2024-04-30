@@ -25,4 +25,4 @@
 - Käyttäjä voi avata html-dokumentin selaimessa.
 - HtmlBuilder luokkaan lisätty funktiot html-dokumentin generoimista varten.
 - Tietokantayhteys luotu.
-- Save-luokka tallettaa tietokantaan html_dokumentin polun.
+- Save-luokka tallettaa tietokantaan html-dokumentin polun.
