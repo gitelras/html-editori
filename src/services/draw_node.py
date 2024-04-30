@@ -98,3 +98,4 @@ class DrawNode:
                     child_width = width * (child.size / size_sum)
                     self.draw_node(canvas, child, child_x, y, child_width, height)
                     child_x += child_width
+# generoitu koodi päättyy

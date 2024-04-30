@@ -14,10 +14,14 @@ class TestDrawnode(unittest.TestCase):
         self.tk.update()
         self.draw_node = DrawNode(self.canvas, None)
         self.node = Node(100, True)
+        self.node2 = Node(100, True)
         self.node_child = Node(20, True)
         self.node_horisontal_child = Node(80, False)
 
     def test_draw_root_right(self):
+        self.node.add_child(self.node_child)
+        #self.node.add_child(self.node_horisontal_child)
+        #self.node_horisontal_child.add_child(self.node2)
         self.node.color = "red"
         self.draw_node.draw_node(self.canvas, self.node, 0, 0, 800, 600)
         self.tk.update()

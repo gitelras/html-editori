@@ -1,9 +1,11 @@
 #from repositories.html_repository import Save
 import os
+from repositories.html_repository import html_repository as default_html_repository
 
 class HtmlBuilder:
-    def __init__(self):
+    def __init__(self, html_repository=default_html_repository):
         self.text = ""
+        self.html_repository = html_repository
 
 # generoitu koodi alkaa
     def generate_html(self, node, width=100, height=100, x_offset=0, y_offset=0):
@@ -39,11 +41,10 @@ class HtmlBuilder:
                     child_x += child_width
         html += '\n</div>'
 
-        self.create_html_file(html)
         return html
 
     def html_document(self, root):
-        return f"""<!DOCTYPE html>
+        full_html = f"""<!DOCTYPE html>
     <html lang="en">
     <head>
         <meta charset="UTF-8">
@@ -58,11 +59,14 @@ class HtmlBuilder:
     {self.generate_html(root, 100, 100)}
     </body>
     </html>"""
+        self.create_html_file(full_html)
+        return full_html
 
     def create_html_file(self, html, filename="output.html"):
         with open(filename, 'w') as file:
             file.write(html)
         file_path = os.path.abspath(filename)
+        path = self.html_repository.create(file_path)
         return file_path
-   
+
 # generoitu koodi päättyy
