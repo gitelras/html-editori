@@ -1,11 +1,32 @@
-#from repositories.html_repository import Save
+
 from entities.node import Node
 
 class TreeBuilder:
+    """
+    Luokka, joka rakentaa monimutkaisen puurakenteen Node-solmuja käyttäen.
+
+    Attributes:
+        text (str): Teksti, jota voidaan käyttää puun rakentamisessa (tässä esimerkissä ei käytetä).
+    """
+
     def __init__(self):
+        """
+        Luo TreeBuilder-olion alustamalla teksti-attribuutin.
+        """
         self.text = ""
 
     def create_menu_tree(self):
+        """
+        Luo ja palauttaa puurakenteen esimerkin.
+
+        Tässä metodissa luodaan useita Node-olioita ja
+        asetellaan ne hierarkkisesti vanhempi-lapsi -suhteisiin.
+        Puu rakennetaan kiinteästi määritellyllä tavalla, 
+        ja solmuille asetetaan eri värit tunnistamisen helpottamiseksi.
+
+        Returns:
+            Node: Juurisolmu rakennetulle puulle, joka sisältää lapsia ja lapsenlapsia.
+        """
         root = Node(100, True)
         node_a = Node(20, True)
         root.add_child(node_a)

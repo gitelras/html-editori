@@ -1,7 +1,8 @@
 from database_connection import get_database_connection
 
 class Save:
-    """Käyttäjiin liittyvistä tietokantaoperaatioista vastaava luokka.
+    """Html-tiedostopolkujen tallentamiseen liittyvistä
+        tietokantaoperaatioista vastaava luokka.
     """
 
     def __init__(self, connection):
@@ -17,10 +18,10 @@ class Save:
         """Tallentaa käyttäjän tietokantaan.
 
         Args:
-            todo: Tallennettava käyttäjä User-oliona.
+            path: Tallennettava tiedostopolku.
 
         Returns:
-            Tallennettu käyttjä User-oliona.
+            Tallennettu tiedostopolku.
         """
 
         cursor = self._connection.cursor()
