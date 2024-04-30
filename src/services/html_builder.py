@@ -110,7 +110,7 @@ class HtmlBuilder:
         Returns:
             str: Absoluuttinen polku luotuun tiedostoon.
         """
-        with open(filename, 'w') as file:
+        with open(filename, 'w', encoding='utf-8') as file:
             file.write(html)
         file_path = os.path.abspath(filename)
         path = self.html_repository.create(file_path)
