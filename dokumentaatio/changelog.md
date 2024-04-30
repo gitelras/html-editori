@@ -19,3 +19,10 @@
 - Käyttäjä voi kirjoittaa mieleistään tekstiä nodeihin.
 - Kirjoitettu teksti tallentuu puuhun.
 - Paranneltu graafista käyttöliittymää kirjoituskentän osalta.
+
+## Viikko 6
+
+- Käyttäjä voi avata html-dokumentin selaimessa.
+- HtmlBuilder luokkaan lisätty funktiot html-dokumentin generoimista varten.
+- Tietokantayhteys luotu.
+- Save-luokka tallettaa tietokantaan html_dokumentin polun.
