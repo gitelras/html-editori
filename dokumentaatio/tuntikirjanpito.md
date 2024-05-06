@@ -1,6 +1,6 @@
 # Työaikakirjanpito
 
-| TASK               | DAY   | TIME H (TOTAL 39) | STARTED  | IN PROGRESS | DONE |
+| TASK               | DAY   | TIME H (TOTAL 41) | STARTED  | IN PROGRESS | DONE |
 | :----------------- | :---: | :----: | :------: | :---------: | :---:|
 | vaatimusmäärittely | 14.3. | 2      | x        |      x       | x    |
 | graafinen käyttöliittymä | 18.3.,4.4.,16.4.,23.4. | 3 | x | x | |
