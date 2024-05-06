@@ -6,6 +6,7 @@ from services.html_builder import HtmlBuilder
 import webbrowser
 import tempfile
 import os
+
 # generoitu koodi alkaa
 
 class MainApplication(Frame):
@@ -54,6 +55,17 @@ class MainApplication(Frame):
         self.html_button = Button(self, text="Näytä HTML", command=self.show_html)
         self.html_button.pack(side="top", fill="x")
 
+        def callback(url):
+            webbrowser.open_new(url)
+
+        instruction_label = Label(self, text="Luodut dokumentit:", width=60, anchor='w')
+        instruction_label.pack(side="top", padx=0, pady=10)
+
+        link1 = Label(self, text="Hyperlink", fg="blue", cursor="hand2")
+        link1.pack()
+        link1.bind("<Button-1>", lambda e: callback('file:///Users/ellamatilda/Ohjelmistotekniikka/src/output.html'))
+
+
     def update_font_family(self, new_family):   
         self.draw_node.font = new_family
         self.draw()
@@ -87,6 +99,7 @@ class MainApplication(Frame):
         with tempfile.NamedTemporaryFile('w', delete=False, suffix='.html') as f:
             f.write(html_content)
             webbrowser.open('file://' + f.name)
+    
 
 
 def main():
