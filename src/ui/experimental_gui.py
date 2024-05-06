@@ -16,6 +16,7 @@ class MainApplication(Frame):
         self.canvas = Canvas(self, bg="white", width=800, height=600)
         self.canvas.pack(fill="both", expand=True, side="left")
         self.create_entry()
+        self.create_html_name_entry()
         self.draw_node = DrawNode(self.canvas, self.entry)
         self.create_widgets()
         self.draw()
@@ -64,13 +65,29 @@ class MainApplication(Frame):
     def draw(self):
         self.draw_node.draw_tree()
     
+    def create_html_name_entry(self):
+        instruction_label = Label(self, text="Kirjoita dokumentille nimi", width=60, anchor='w')
+        instruction_label.pack(side="top", padx=0, pady=10)
+
+        self.entry = Entry(self, bd=0.5, width=60)
+        self.entry.pack(side="top", padx=0, pady=10)
+
+        def handle_enter(_):
+            self.entered_text = self.entry.get()
+            
+        self.entry.bind("<Return>", handle_enter)
+        
+        
     def show_html(self):
+        print(self.entered_text)
+      
         # Tässä luodaan HTML-dokumentti puurakenteesta
-        html_content = self.html_builder.html_document(self.draw_node.root_node)
+        html_content = self.html_builder.html_document(self.draw_node.root_node, self.entered_text)
         # Tallennetaan HTML sisältö väliaikaistiedostoon ja avataan se selaimessa
         with tempfile.NamedTemporaryFile('w', delete=False, suffix='.html') as f:
             f.write(html_content)
             webbrowser.open('file://' + f.name)
+
 
 def main():
     root = Tk()

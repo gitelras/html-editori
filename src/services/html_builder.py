@@ -70,7 +70,7 @@ class HtmlBuilder:
 
         return html
 
-    def html_document(self, root):
+    def html_document(self, root, name):
         """
         Luo koko HTML-dokumentin, joka sisältää puun visualisoinnin.
 
@@ -95,10 +95,10 @@ class HtmlBuilder:
     {self.generate_html(root, 100, 100)}
     </body>
     </html>"""
-        self.create_html_file(full_html)
+        self.create_html_file(full_html, name)
         return full_html
 
-    def create_html_file(self, html, filename="output.html"):
+    def create_html_file(self, html, filename):
         """
         Tallentaa generoidun HTML-dokumentin tiedostoon ja rekisteröi sen html_repositoryn kautta.
 
@@ -110,6 +110,7 @@ class HtmlBuilder:
         Returns:
             str: Absoluuttinen polku luotuun tiedostoon.
         """
+        filename = f'{filename}'+'.html'
         with open(filename, 'w', encoding='utf-8') as file:
             file.write(html)
         file_path = os.path.abspath(filename)
