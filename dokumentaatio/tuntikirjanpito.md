@@ -18,3 +18,5 @@
 | DrawNode-luokan refaktorointia | 23.4. | 2 | x | x | x |
 | tietokantayhteys luotu | 29.4. | 2 | x | x | x |
 | testi html-dokumentin generoimiselle | 30.4. | 2 | x | x | x |
+| käyttäjä voi kirjoittaa dokumentin nimen | 6.5. | 1 | x | x | x |
+| linkit luotuihin dokumentteihin | 6.5. | 1 | x | x |  |
