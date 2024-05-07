@@ -13,7 +13,7 @@ def create_tables(connection):
 
     cursor.execute('''
         create table documents (
-            ID PRIMERY KEY,
+            ID PRIMARY KEY,
             path TEXT
         );
     ''')

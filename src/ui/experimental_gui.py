@@ -54,6 +54,9 @@ class MainApplication(Frame):
 
         self.html_button = Button(self, text="Näytä HTML", command=self.show_html)
         self.html_button.pack(side="top", fill="x")
+        self.show_links()
+
+    def show_links(self):
 
         def callback(url):
             webbrowser.open_new(url)
@@ -61,9 +64,14 @@ class MainApplication(Frame):
         instruction_label = Label(self, text="Luodut dokumentit:", width=60, anchor='w')
         instruction_label.pack(side="top", padx=0, pady=10)
 
-        link1 = Label(self, text="Hyperlink", fg="blue", cursor="hand2")
-        link1.pack()
-        link1.bind("<Button-1>", lambda e: callback('file:///Users/ellamatilda/Ohjelmistotekniikka/src/output.html'))
+        files = HtmlBuilder.all_files(self)
+        files.reverse()
+
+        for file in files:
+            file_name = file[1].split('/')[-1]
+            link1 = Label(self, text=file_name, fg="blue", cursor="hand2")
+            link1.pack()
+            link1.bind("<Button-1>", lambda e, f=file[1]: callback('file://' + f))
 
     def update_font_family(self, new_family):   
         self.draw_node.font = new_family

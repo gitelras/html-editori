@@ -34,6 +34,21 @@ class Save:
         self._connection.commit()
 
         return path
+    
+    def get_files(self):
+        cursor = self._connection.cursor()
+        result = cursor.execute(
+            "select * from documents"
+        )
+        files = result.fetchall()
+
+        for i in files:
+            print(i)
+
+        self._connection.commit()
+
+        return files
+
 
 
 html_repository = Save(get_database_connection())

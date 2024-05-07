@@ -116,4 +116,8 @@ class HtmlBuilder:
         file_path = os.path.abspath(filename)
         path = self.html_repository.create(file_path)
         return file_path
+    
+    def all_files(self):
+        return default_html_repository.get_files()
+
 # generoitu koodi päättyy
