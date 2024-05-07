@@ -65,7 +65,6 @@ class MainApplication(Frame):
         link1.pack()
         link1.bind("<Button-1>", lambda e: callback('file:///Users/ellamatilda/Ohjelmistotekniikka/src/output.html'))
 
-
     def update_font_family(self, new_family):   
         self.draw_node.font = new_family
         self.draw()
@@ -81,13 +80,13 @@ class MainApplication(Frame):
         instruction_label = Label(self, text="Kirjoita dokumentille nimi", width=60, anchor='w')
         instruction_label.pack(side="top", padx=0, pady=10)
 
-        self.entry = Entry(self, bd=0.5, width=60)
-        self.entry.pack(side="top", padx=0, pady=10)
+        self.entry_html_name = Entry(self, bd=0.5, width=60)
+        self.entry_html_name.pack(side="top", padx=0, pady=10)
 
         def handle_enter(_):
-            self.entered_text = self.entry.get()
+            self.entered_text = self.entry_html_name.get()
             
-        self.entry.bind("<Return>", handle_enter)
+        self.entry_html_name.bind("<Return>", handle_enter)
         
         
     def show_html(self):
