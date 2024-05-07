@@ -1,8 +1,9 @@
 
-from tkinter import Tk, Canvas, Entry, Frame, Button, OptionMenu, StringVar, colorchooser, Label, Toplevel
+from tkinter import Tk, Canvas, Entry, Frame, Button, OptionMenu, StringVar, colorchooser, Label, Toplevel, Scrollbar
 from services.draw_node import DrawNode
 from entities.node import Node
 from services.html_builder import HtmlBuilder
+import tkinter.font as tkFont
 import webbrowser
 import tempfile
 import os
@@ -57,21 +58,40 @@ class MainApplication(Frame):
         self.show_links()
 
     def show_links(self):
-
         def callback(url):
             webbrowser.open_new(url)
 
         instruction_label = Label(self, text="Luodut dokumentit:", width=60, anchor='w')
         instruction_label.pack(side="top", padx=0, pady=10)
 
+        # Creating a canvas and a vertical scrollbar
+        canvas = Canvas(self)
+        scrollbar = Scrollbar(self, orient="vertical", command=canvas.yview)
+        scrollable_frame = Frame(canvas)
+
+        # Configure the canvas
+        scrollable_frame.bind(
+            "<Configure>",
+            lambda e: canvas.configure(
+                scrollregion=canvas.bbox("all")
+            )
+        )
+        canvas.create_window((0, 0), window=scrollable_frame, anchor="nw")
+        canvas.configure(yscrollcommand=scrollbar.set)
+
         files = HtmlBuilder.all_files(self)
         files.reverse()
+        font_style = tkFont.Font(size=16, underline=True)
 
         for file in files:
             file_name = file[1].split('/')[-1]
-            link1 = Label(self, text=file_name, fg="blue", cursor="hand2")
+            link1 = Label(scrollable_frame, text=file_name, fg="white", cursor="hand2", font=font_style)
             link1.pack()
-            link1.bind("<Button-1>", lambda e, f=file[1]: callback('file://' + f))
+            link1.bind("<Button-1>", lambda e, f='file://' + file[1]: callback(f))
+
+        # Pack everything
+        canvas.pack(side="left", fill="both", expand=True)
+        scrollbar.pack(side="right", fill="y")
 
     def update_font_family(self, new_family):   
         self.draw_node.font = new_family
@@ -84,30 +104,35 @@ class MainApplication(Frame):
     def draw(self):
         self.draw_node.draw_tree()
     
+    def clear_error_message(self, _):
+        # Clear any text in the message label
+        self.message_label.config(text="")
+    
     def create_html_name_entry(self):
         instruction_label = Label(self, text="Kirjoita dokumentille nimi", width=60, anchor='w')
         instruction_label.pack(side="top", padx=0, pady=10)
 
         self.entry_html_name = Entry(self, bd=0.5, width=60)
         self.entry_html_name.pack(side="top", padx=0, pady=10)
-
-        def handle_enter(_):
-            self.entered_text = self.entry_html_name.get()
-            
-        self.entry_html_name.bind("<Return>", handle_enter)
-        
+        self.entry_html_name.bind("<KeyRelease>", self.clear_error_message)
         
     def show_html(self):
-        print(self.entered_text)
-      
-        # Tässä luodaan HTML-dokumentti puurakenteesta
-        html_content = self.html_builder.html_document(self.draw_node.root_node, self.entered_text)
-        # Tallennetaan HTML sisältö väliaikaistiedostoon ja avataan se selaimessa
-        with tempfile.NamedTemporaryFile('w', delete=False, suffix='.html') as f:
-            f.write(html_content)
-            webbrowser.open('file://' + f.name)
-    
+        try:
+            self.entered_text = self.entry_html_name.get().strip()
+            if not self.entered_text:
+                self.message_label = Label(self, text="")
+                self.message_label.pack()
+                raise ValueError("Dokumentin nimi puuttuu")
 
+            html_content = self.html_builder.html_document(self.draw_node.root_node, self.entered_text)
+
+            with tempfile.NamedTemporaryFile('w', delete=False, suffix='.html') as f:
+                f.write(html_content)
+                webbrowser.open('file://' + f.name)
+        
+        except Exception as e:
+            self.message_label.config(text="Virhe: " + str(e), fg="red")
+            print(f"Error: {e}")
 
 def main():
     root = Tk()
