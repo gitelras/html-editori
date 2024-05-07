@@ -1,9 +1,9 @@
 # Työaikakirjanpito
 
-| TASK               | DAY   | TIME H (TOTAL 41) | STARTED  | IN PROGRESS | DONE |
+| TASK               | DAY   | TIME H (TOTAL 43) | STARTED  | IN PROGRESS | DONE |
 | :----------------- | :---: | :----: | :------: | :---------: | :---:|
 | vaatimusmäärittely | 14.3. | 2      | x        |      x       | x    |
-| graafinen käyttöliittymä | 18.3.,4.4.,16.4.,23.4. | 3 | x | x | |
+| graafinen käyttöliittymä | 18.3.,4.4.,16.4.,23.4.,7.5. | 4 | x | x | |
 | käyttäjän kirjoittama teksti menee html_builderiin | 19.3. | 2 | x | x | x |
 | sovelluslogiikan suunnittelua | 22.3. | 2      | x        | x            |  x |
 | diveistä rakentuu html puu | 22.3.,25.4. | 3      | x        | x            |  x  |
@@ -19,4 +19,4 @@
 | tietokantayhteys luotu | 29.4. | 2 | x | x | x |
 | testi html-dokumentin generoimiselle | 30.4. | 2 | x | x | x |
 | käyttäjä voi kirjoittaa dokumentin nimen | 6.5. | 1 | x | x | x |
-| linkit luotuihin dokumentteihin | 6.5. | 1 | x | x |  |
+| linkit luotuihin dokumentteihin | 6.5.,7.5. | 2 | x | x | x |
