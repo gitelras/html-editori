@@ -12,7 +12,7 @@ Sovellusta käytetään **HTML-dokumentin** tekemiseen. Käyttäjä voi luoda gr
 - Käyttäjä näkee, miltä dokumentti näyttää selaimessa. (tehty)
 - Käyttäjä voi luoda yhdellä klikkauksella HTML-dokumentin. (tehty)
 - Käyttäjä voi nimetä luomansa HTML-tiedoston. (tehty)
-- Käyttäjä näkee luomansa tiedostot arkistoituna sovelluksessa.
+- Käyttäjä näkee luomansa tiedostot sovelluksessa. (tehty)
 
 ## Toimintaympäristöstä
 
