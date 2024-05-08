@@ -76,6 +76,7 @@ class HtmlBuilder:
 
         Args:
             root (Node): Puun juurisolmu, josta dokumentin generointi aloitetaan.
+            name: Dokumentin nimi, jonka käyttäjä asettaa.
 
         Returns:
             str: Valmis HTML-dokumentti merkkijonona.
@@ -105,7 +106,6 @@ class HtmlBuilder:
         Args:
             html (str): Tallennettava HTML-dokumentti.
             filename (str, optional): Tiedostonimi, johon dokumentti tallennetaan. 
-            Oletus on "output.html".
 
         Returns:
             str: Absoluuttinen polku luotuun tiedostoon.

@@ -37,6 +37,7 @@ class MainApplication(Frame):
         color_code = colorchooser.askcolor(title="Valitse väri")[1]
         if color_code:
             self.draw_node.selected_color = color_code
+            print(color_code)
 
     def create_widgets(self):
         font_family_var = StringVar(self)
@@ -64,12 +65,10 @@ class MainApplication(Frame):
         instruction_label = Label(self, text="Luodut dokumentit:", width=60, anchor='w')
         instruction_label.pack(side="top", padx=0, pady=10)
 
-        # Creating a canvas and a vertical scrollbar
         canvas = Canvas(self)
         scrollbar = Scrollbar(self, orient="vertical", command=canvas.yview)
         scrollable_frame = Frame(canvas)
 
-        # Configure the canvas
         scrollable_frame.bind(
             "<Configure>",
             lambda e: canvas.configure(
@@ -89,7 +88,6 @@ class MainApplication(Frame):
             link1.pack()
             link1.bind("<Button-1>", lambda e, f='file://' + file[1]: callback(f))
 
-        # Pack everything
         canvas.pack(side="left", fill="both", expand=True)
         scrollbar.pack(side="right", fill="y")
 
@@ -105,7 +103,6 @@ class MainApplication(Frame):
         self.draw_node.draw_tree()
     
     def clear_error_message(self, _):
-        # Clear any text in the message label
         self.message_label.config(text="")
     
     def create_html_name_entry(self):
@@ -115,13 +112,14 @@ class MainApplication(Frame):
         self.entry_html_name = Entry(self, bd=0.5, width=60)
         self.entry_html_name.pack(side="top", padx=0, pady=10)
         self.entry_html_name.bind("<KeyRelease>", self.clear_error_message)
+
+        self.message_label = Label(self, text="", fg="red")
+        self.message_label.pack(side="top", pady=5)
         
     def show_html(self):
         try:
             self.entered_text = self.entry_html_name.get().strip()
             if not self.entered_text:
-                self.message_label = Label(self, text="")
-                self.message_label.pack()
                 raise ValueError("Dokumentin nimi puuttuu")
 
             html_content = self.html_builder.html_document(self.draw_node.root_node, self.entered_text)
@@ -131,7 +129,7 @@ class MainApplication(Frame):
                 webbrowser.open('file://' + f.name)
         
         except Exception as e:
-            self.message_label.config(text="Virhe: " + str(e), fg="red")
+            self.message_label.config(text=str(e))
             print(f"Error: {e}")
 
 def main():

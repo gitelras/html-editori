@@ -33,19 +33,19 @@ class TreeBuilder:
         node_b = Node(80, False)
         root.add_child(node_b)
         node_e = Node(40, True)
-        node_e.color = "red"
+        node_e.color = "#bcebeb"
         node_a.add_child(node_e)
         node_c = Node(50, True)
         node_b.add_child(node_c)
         for _ in range(5):
             child_node = Node(10, True)
-            child_node.color = "blue"
+            child_node.color = "#bcebeb"
             node_c.add_child(child_node)
         node_d = Node(20, True)
         node_b.add_child(node_d)
         for _ in range(5):
             child_node = Node(5, True)
-            child_node.color = "green"
+            child_node.color = "#bcebeb"
             node_d.add_child(child_node)
 
         return root
