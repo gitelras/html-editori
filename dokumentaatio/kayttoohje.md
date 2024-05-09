@@ -26,6 +26,14 @@ poetry run invoke start
 
 Klikkaa pohjan aluetta, johon haluat kirjoittaa. Valitse tekstin väri, fontti ja fontin koko. Kirjoita haluamasi teksti kenttään ja paina enter. Voit ylikirjoittaa tekstin kirjoittamalla samaan kenttään uudelleen. 
 
+## Html-dokumentin esikatselu
+
+Klikkaa "Esikatsele selaimessa" ja dokumentti avautuu selaimessa.
+
 ## Html-dokumentin generointi
 
-Klikkaa "Näytä HTML" ja dokumentti avautuu selaimessa.
+Nimeä dokumentti ja klikkaa "Tallenna html-dokumentti". Dokumentti tallettuu paikalliselle koneellesi. 
+
+## Luotujen html-dokumenttien tarkastelu
+
+Näet luodut html-dokumentit listattuna sovelluksessa. Juuri luodun dokumentin näet listassa päivittämällä ensin sovelluksen. Klikkaamalla dokumenttia näet dokumentin selaimessa.
