@@ -37,7 +37,6 @@ class MainApplication(Frame):
         color_code = colorchooser.askcolor(title="Valitse väri")[1]
         if color_code:
             self.draw_node.selected_color = color_code
-            print(color_code)
 
     def create_widgets(self):
         font_family_var = StringVar(self)
@@ -120,7 +119,6 @@ class MainApplication(Frame):
         self.message_label.pack(side="top", pady=5)
     
     def save_html(self):
-        print("painettiin tallenna")
         try:
             self.entered_text = self.entry_html_name.get().strip()
             if not self.entered_text:
@@ -130,7 +128,6 @@ class MainApplication(Frame):
         
         except Exception as e:
             self.message_label.config(text=str(e))
-            print(f"Error: {e}")
         
     def show_html(self):
             html_content = self.html_builder.html_document(self.draw_node.root_node, "")

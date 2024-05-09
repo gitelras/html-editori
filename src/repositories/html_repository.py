@@ -41,14 +41,17 @@ class Save:
             "select * from documents"
         )
         files = result.fetchall()
+        self._connection.commit()
+        return files
+    
+    def delete_all(self):
+        """Poistaa kaikki polut.
+        """
 
-        for i in files:
-            print(i)
+        cursor = self._connection.cursor()
+
+        cursor.execute("delete from documents")
 
         self._connection.commit()
-
-        return files
-
-
 
 html_repository = Save(get_database_connection())
