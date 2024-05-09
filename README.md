@@ -31,6 +31,12 @@ poetry run invoke start
 
 ## Testaa sovellusta
 
+Suorita alustustoimenpiteet
+
+```bash
+poetry add pytest-dotenv --dev
+```
+
 Suorita testit
 
 ```bash
