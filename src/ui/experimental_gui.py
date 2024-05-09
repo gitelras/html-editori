@@ -54,7 +54,10 @@ class MainApplication(Frame):
         self.color_button = Button(self, text="Valitse väri", command=self.choose_color)
         self.color_button.pack(side="top", fill="x")
 
-        self.html_button = Button(self, text="Näytä HTML", command=self.show_html)
+        self.html_button = Button(self, text="Esikatsele selaimessa", command=self.show_html)
+        self.html_button.pack(side="top", fill="x")
+
+        self.html_button = Button(self, text="Tallenna html-dokumentti", command=self.save_html)
         self.html_button.pack(side="top", fill="x")
         self.show_links()
 
@@ -115,22 +118,26 @@ class MainApplication(Frame):
 
         self.message_label = Label(self, text="", fg="red")
         self.message_label.pack(side="top", pady=5)
-        
-    def show_html(self):
+    
+    def save_html(self):
+        print("painettiin tallenna")
         try:
             self.entered_text = self.entry_html_name.get().strip()
             if not self.entered_text:
                 raise ValueError("Dokumentin nimi puuttuu")
-
-            html_content = self.html_builder.html_document(self.draw_node.root_node, self.entered_text)
-
-            with tempfile.NamedTemporaryFile('w', delete=False, suffix='.html') as f:
-                f.write(html_content)
-                webbrowser.open('file://' + f.name)
+            
+            self.html_builder.html_document(self.draw_node.root_node, self.entered_text)
         
         except Exception as e:
             self.message_label.config(text=str(e))
             print(f"Error: {e}")
+        
+    def show_html(self):
+            html_content = self.html_builder.html_document(self.draw_node.root_node, "")
+
+            with tempfile.NamedTemporaryFile('w', delete=False, suffix='.html') as f:
+                f.write(html_content)
+                webbrowser.open('file://' + f.name)
 
 def main():
     root = Tk()

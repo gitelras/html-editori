@@ -96,6 +96,8 @@ class HtmlBuilder:
     {self.generate_html(root, 100, 100)}
     </body>
     </html>"""
+        if name == "":
+            return full_html
         self.create_html_file(full_html, name)
         return full_html
 
