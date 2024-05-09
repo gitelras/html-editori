@@ -32,7 +32,7 @@ Klikkaa "Esikatsele selaimessa" ja dokumentti avautuu selaimessa.
 
 ## Html-dokumentin generointi
 
-Nimeä dokumentti ja klikkaa "Tallenna html-dokumentti". Dokumentti tallettuu paikalliselle koneellesi. 
+Nimeä dokumentti ja klikkaa "Tallenna html-dokumentti". Dokumentti tallettuu paikalliselle koneelle. 
 
 ## Luotujen html-dokumenttien tarkastelu
 
