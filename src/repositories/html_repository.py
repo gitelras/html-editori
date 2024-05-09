@@ -43,7 +43,7 @@ class Save:
         files = result.fetchall()
         self._connection.commit()
         return files
-    
+
     def delete_all(self):
         """Poistaa kaikki polut.
         """
