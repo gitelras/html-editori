@@ -34,7 +34,7 @@ class Save:
         self._connection.commit()
 
         return path
-    
+
     def get_files(self):
         cursor = self._connection.cursor()
         result = cursor.execute(
