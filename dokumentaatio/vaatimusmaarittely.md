@@ -4,7 +4,7 @@ Sovellusta käytetään **HTML-dokumentin** tekemiseen. Käyttäjä voi luoda gr
 
 ## Sovelluksen ominaisuuksia
 
-- Käyttäjä voi valita mieleisensä layoutin valmiista pohjista.
+- Käyttäjä voi valita mieleisensä layoutin valmiista pohjista. (tehty)
 - Käyttäjä näkee valitsemansa layoutin muokkaustilassa. (tehty)
 - Käyttäjä voi valita valikosta värin, fontin ja fontin koon. (tehty)
 - Käyttäjä voi kirjoittaa pohjaan mieleistään tekstiä. (tehty)
