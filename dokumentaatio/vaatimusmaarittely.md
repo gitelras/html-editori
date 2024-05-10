@@ -8,7 +8,7 @@ Sovellusta käytetään **HTML-dokumentin** tekemiseen. Käyttäjä voi luoda gr
 - Käyttäjä näkee valitsemansa layoutin muokkaustilassa. (tehty)
 - Käyttäjä voi valita valikosta värin, fontin ja fontin koon. (tehty)
 - Käyttäjä voi kirjoittaa pohjaan mieleistään tekstiä. (tehty)
-- Käyttäjä voi vaihtaa layoutin väriä.
+- Käyttäjä voi vaihtaa layoutin väriä. (tehty)
 - Käyttäjä voi luoda html-dokumentin. (tehty)
 - Käyttäjä näkee, miltä dokumentti näyttää selaimessa. (tehty)
 - Käyttäjä voi nimetä luomansa html-dokumentin. (tehty)
