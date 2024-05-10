@@ -24,7 +24,7 @@ poetry run invoke start
 
 ## Html-dokumentin muokkaaminen 
 
-Klikkaa pohjan aluetta, johon haluat kirjoittaa. Valitse tekstin väri, fontti ja fontin koko. Kirjoita haluamasi teksti kenttään ja paina enter. Voit ylikirjoittaa tekstin kirjoittamalla samaan kenttään uudelleen. 
+Valitse ensin html-dokumentin rakenne valmiista pohjista. Klikkaa pohjan aluetta, johon haluat kirjoittaa. Valitse tekstin väri, fontti ja fontin koko. Kirjoita haluamasi teksti kenttään ja paina enter. Voit ylikirjoittaa tekstin kirjoittamalla samaan kenttään uudelleen. 
 
 ## Html-dokumentin esikatselu
 
