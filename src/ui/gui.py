@@ -43,16 +43,11 @@ class MainApplication(Frame):
     
     def create_preview(self, image_path):
         image = Image.open(image_path)
-        image.thumbnail((160, 160))  # Skaalaa kuvaa
+        image.thumbnail((160, 160))
         return ImageTk.PhotoImage(image)
     
     def select_layout(self, layout_name):
-        if layout_name == "Layout 1":
-            self.draw_node.layout()
-        if layout_name == "Layout 2":
-            self.draw_node.layout_menu()
-        if layout_name == "Layout 3":
-            self.draw_node.layout_lemon()
+        self.draw_node.draw_layout(layout_name)
     
     def show_layouts(self):
         instruction_label = Label(self, text="Valitse pohja", width=60, anchor='w')
@@ -61,15 +56,15 @@ class MainApplication(Frame):
         grid_frame = Frame(self)
         grid_frame.pack(side="top", fill="x")
 
-        self.layout1_preview = self.create_preview("assets/kuva.png")
+        self.layout1_preview = self.create_preview("assets/layout.png")
         layout1_button = Button(grid_frame, image=self.layout1_preview, command=lambda: self.select_layout("Layout 1"))
         layout1_button.grid(row=0, column=0)
 
-        self.layout2_preview = self.create_preview("assets/kuva2.png")
+        self.layout2_preview = self.create_preview("assets/layout2.png")
         layout2_button = Button(grid_frame, image=self.layout2_preview, command=lambda: self.select_layout("Layout 2"))
         layout2_button.grid(row=0, column=1)
 
-        self.layout3_preview = self.create_preview("assets/kuva3.png")
+        self.layout3_preview = self.create_preview("assets/layout3.png")
         layout3_button = Button(grid_frame, image=self.layout3_preview, command=lambda: self.select_layout("Layout 3"))
         layout3_button.grid(row=0, column=2)
 
@@ -100,7 +95,6 @@ class MainApplication(Frame):
 
     def change_layout(self):
         self.draw_node.layout()
-
 
     def show_links(self):
         def callback(url):

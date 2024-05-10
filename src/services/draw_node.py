@@ -40,20 +40,12 @@ class DrawNode:
         self.active_node = None
         self.entry = entry
 
-    def layout(self):
-        self.root_node = self.tree_builder.create_apple_tree()
+    def draw_layout(self, layout_name):
+        trees = {"Layout 1": self.tree_builder.create_apple_tree,
+                 "Layout 2": self.tree_builder.create_menu_tree,
+                 "Layout 3": self.tree_builder.create_lemon_tree}
+        self.root_node = trees[layout_name]()
         self.draw_tree()
-        print("tultiin layout")
-    
-    def layout_lemon(self):
-        self.root_node = self.tree_builder.create_lemon_tree()
-        self.draw_tree()
-        print("tultiin lemon")
-
-    def layout_menu(self):
-        self.root_node = self.tree_builder.create_menu_tree()
-        self.draw_tree()
-        print("tultiin menu")
 
     def get_active_node(self):
         """Palauttaa aktiivisen solmun."""
