@@ -41,6 +41,11 @@ class MainApplication(Frame):
             self.draw_node.selected_color = color_code
             print(color_code)
     
+    def choose_backround_color(self):
+        color_code = colorchooser.askcolor(title="Valitse väri")[1]
+        if color_code:
+            self.draw_node.change_backround_color(color_code)
+
     def create_preview(self, image_path):
         image = Image.open(image_path)
         image.thumbnail((160, 160))
@@ -68,6 +73,12 @@ class MainApplication(Frame):
         layout3_button = Button(grid_frame, image=self.layout3_preview, command=lambda: self.select_layout("Layout 3"))
         layout3_button.grid(row=0, column=2)
 
+        self.backround_color_widget()
+    
+    def backround_color_widget(self):
+        self.color_button = Button(self, text="Valitse taustaväri", command=self.choose_backround_color)
+        self.color_button.pack(side="top", fill="x")
+
     def create_widgets(self):
         font_family_var = StringVar(self)
         fonts = ["Times New Roman", "Arial", "Georgia", "Garamond", "Courier"]
@@ -86,15 +97,9 @@ class MainApplication(Frame):
         self.html_button = Button(self, text="Esikatsele selaimessa", command=self.show_html)
         self.html_button.pack(side="top", fill="x")
 
-        self.html_button = Button(self, text="Vaihda pohja", command=self.change_layout)
-        self.html_button.pack(side="top", fill="x")
-
         self.html_button = Button(self, text="Tallenna html-dokumentti", command=self.save_html)
         self.html_button.pack(side="top", fill="x")
         self.show_links()
-
-    def change_layout(self):
-        self.draw_node.layout()
 
     def show_links(self):
         def callback(url):

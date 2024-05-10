@@ -129,6 +129,15 @@ class DrawNode:
                 else:
                     child_x += child_width
         return None
+        
+    def change_colors(self, node, color):
+        node.color = color
+        for child in node.children:
+            self.change_colors(child, color)
+    
+    def change_backround_color(self, color_code):
+        self.change_colors(self.root_node, color_code)
+        self.draw_tree()
 
     def draw_node(self, canvas, node, x, y, width, height):
         """
