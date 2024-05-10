@@ -1,8 +1,9 @@
 
-from tkinter import Tk, Canvas, Entry, Frame, Button, OptionMenu, StringVar, colorchooser, Label, Toplevel, Scrollbar
+from tkinter import Tk, Canvas, Entry, Frame, Button, OptionMenu, StringVar, colorchooser, Label, Toplevel, Scrollbar, filedialog
 from services.draw_node import DrawNode
 from entities.node import Node
 from services.html_builder import HtmlBuilder
+from PIL import Image, ImageTk
 import tkinter.font as tkFont
 import webbrowser
 import tempfile
@@ -17,6 +18,7 @@ class MainApplication(Frame):
         self.pack(fill="both", expand=True)
         self.canvas = Canvas(self, bg="white", width=800, height=600)
         self.canvas.pack(fill="both", expand=True, side="left")
+        self.show_layouts()
         self.create_entry()
         self.create_html_name_entry()
         self.draw_node = DrawNode(self.canvas, self.entry)
@@ -37,6 +39,39 @@ class MainApplication(Frame):
         color_code = colorchooser.askcolor(title="Valitse väri")[1]
         if color_code:
             self.draw_node.selected_color = color_code
+            print(color_code)
+    
+    def create_preview(self, image_path):
+        image = Image.open(image_path)
+        image.thumbnail((160, 160))  # Skaalaa kuvaa
+        return ImageTk.PhotoImage(image)
+    
+    def select_layout(self, layout_name):
+        if layout_name == "Layout 1":
+            self.draw_node.layout()
+        if layout_name == "Layout 2":
+            self.draw_node.layout_menu()
+        if layout_name == "Layout 3":
+            self.draw_node.layout_lemon()
+    
+    def show_layouts(self):
+        instruction_label = Label(self, text="Valitse pohja", width=60, anchor='w')
+        instruction_label.pack(side="top", padx=0, pady=10)
+
+        grid_frame = Frame(self)
+        grid_frame.pack(side="top", fill="x")
+
+        self.layout1_preview = self.create_preview("assets/kuva.png")
+        layout1_button = Button(grid_frame, image=self.layout1_preview, command=lambda: self.select_layout("Layout 1"))
+        layout1_button.grid(row=0, column=0)
+
+        self.layout2_preview = self.create_preview("assets/kuva2.png")
+        layout2_button = Button(grid_frame, image=self.layout2_preview, command=lambda: self.select_layout("Layout 2"))
+        layout2_button.grid(row=0, column=1)
+
+        self.layout3_preview = self.create_preview("assets/kuva3.png")
+        layout3_button = Button(grid_frame, image=self.layout3_preview, command=lambda: self.select_layout("Layout 3"))
+        layout3_button.grid(row=0, column=2)
 
     def create_widgets(self):
         font_family_var = StringVar(self)
@@ -56,9 +91,16 @@ class MainApplication(Frame):
         self.html_button = Button(self, text="Esikatsele selaimessa", command=self.show_html)
         self.html_button.pack(side="top", fill="x")
 
+        self.html_button = Button(self, text="Vaihda pohja", command=self.change_layout)
+        self.html_button.pack(side="top", fill="x")
+
         self.html_button = Button(self, text="Tallenna html-dokumentti", command=self.save_html)
         self.html_button.pack(side="top", fill="x")
         self.show_links()
+
+    def change_layout(self):
+        self.draw_node.layout()
+
 
     def show_links(self):
         def callback(url):
