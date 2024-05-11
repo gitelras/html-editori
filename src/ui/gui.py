@@ -1,13 +1,11 @@
 
 from tkinter import Tk, Canvas, Entry, Frame, Button, OptionMenu, StringVar, colorchooser, Label, Toplevel, Scrollbar, filedialog
 from services.draw_node import DrawNode
-from entities.node import Node
 from services.html_builder import HtmlBuilder
 from PIL import Image, ImageTk
 import tkinter.font as tkFont
 import webbrowser
 import tempfile
-import os
 
 # generoitu koodi alkaa
 
@@ -42,7 +40,7 @@ class MainApplication(Frame):
             print(color_code)
     
     def choose_backround_color(self):
-        color_code = colorchooser.askcolor(title="Valitse väri")[1]
+        color_code = colorchooser.askcolor(title="Valitse taustaväri")[1]
         if color_code:
             self.draw_node.change_backround_color(color_code)
 
@@ -61,17 +59,20 @@ class MainApplication(Frame):
         grid_frame = Frame(self)
         grid_frame.pack(side="top", fill="x")
 
-        self.layout1_preview = self.create_preview("assets/layout.png")
-        layout1_button = Button(grid_frame, image=self.layout1_preview, command=lambda: self.select_layout("Layout 1"))
-        layout1_button.grid(row=0, column=0)
-
-        self.layout2_preview = self.create_preview("assets/layout2.png")
-        layout2_button = Button(grid_frame, image=self.layout2_preview, command=lambda: self.select_layout("Layout 2"))
-        layout2_button.grid(row=0, column=1)
-
-        self.layout3_preview = self.create_preview("assets/layout3.png")
-        layout3_button = Button(grid_frame, image=self.layout3_preview, command=lambda: self.select_layout("Layout 3"))
-        layout3_button.grid(row=0, column=2)
+        layouts = {
+        "Layout 1": "assets/layout.png",
+        "Layout 2": "assets/layout2.png",
+        "Layout 3": "assets/layout3.png"
+    }
+        for index, (layout_name, file_path) in enumerate(layouts.items()):
+            preview_attr = f"layout{index + 1}_preview"
+            setattr(self, preview_attr, self.create_preview(file_path))
+            button = Button(
+                grid_frame,
+                image=getattr(self, preview_attr),
+                command=lambda name=layout_name: self.select_layout(name)
+            )
+            button.grid(row=0, column=index)
 
         self.backround_color_widget()
     
@@ -91,14 +92,14 @@ class MainApplication(Frame):
         self.font_size_menu = OptionMenu(self, font_size_var, *(str(x) for x in range(8, 49, 2)), command=self.update_font_size)
         self.font_size_menu.pack(side="top", fill="x")
 
-        self.color_button = Button(self, text="Valitse väri", command=self.choose_color)
-        self.color_button.pack(side="top", fill="x")
-
-        self.html_button = Button(self, text="Esikatsele selaimessa", command=self.show_html)
-        self.html_button.pack(side="top", fill="x")
-
-        self.html_button = Button(self, text="Tallenna html-dokumentti", command=self.save_html)
-        self.html_button.pack(side="top", fill="x")
+        buttons = {"Valitse väri": self.choose_color,
+                    "Esikatsele selaimessa": self.show_html,
+                    "Tallenna html-dokumentti": self.save_html}
+        
+        for text, command in buttons.items():
+            button = Button(self, text=text, command=command)
+            button.pack(side="top", fill="x")
+        
         self.show_links()
 
     def show_links(self):

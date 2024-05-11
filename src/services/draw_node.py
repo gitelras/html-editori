@@ -47,10 +47,6 @@ class DrawNode:
         self.root_node = trees[layout_name]()
         self.draw_tree()
 
-    def get_active_node(self):
-        """Palauttaa aktiivisen solmun."""
-        return self.active_node
-
     def draw_tree(self):
         """Piirtää koko solmupuun canvakselle."""
         self.draw_node(self.canvas, self.root_node, 0, 0,
