@@ -117,7 +117,7 @@ sequenceDiagram
 - Solmujen tietojen perusteella rakennetaan html-dokumentti.
 - Html-dokumentin polku talletetaan tietokantaan.
 
-## Tietojen pysyväistallennus
+### Tietojen pysyväistallennus
 
 Luokka [Save](/src/repositories/html_repository.py) vastaa tiedostopolkujen tallettamisesta SQLite-tietokantaan. Tiedostopolut talletetaan [initialize_database.py](/initialize_database.py)-tiedostossa luotuun documents-tauluun. 
 
