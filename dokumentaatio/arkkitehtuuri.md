@@ -45,7 +45,7 @@ graph TD;
 
 ### Päätoiminnallisuudet
 
-#### - Käyttäjä kirjoittaa tekstiä
+#### Käyttäjä kirjoittaa tekstiä
 
 ```mermaid
 sequenceDiagram
@@ -74,7 +74,7 @@ sequenceDiagram
 - Päivitetään solmun tiedot: Kun käyttäjä kirjoittaa tekstiä ja painaa enter, kutsutaan on_entry_return-metodia, joka päivittää aktiivisen solmun tiedot.
 - Piirretään puu uudelleen: Puu piirretään aina uudelleen päivitetyillä tiedoilla.
 
-#### - Html-dokumentti generoidaan
+#### Html-dokumentti generoidaan
 
 ```mermaid
 sequenceDiagram
@@ -116,3 +116,27 @@ sequenceDiagram
 
 - Solmujen tietojen perusteella rakennetaan html-dokumentti.
 - Html-dokumentin polku talletetaan tietokantaan.
+
+## Tietojen pysyväistallennus
+
+Luokka [Save](/src/repositories/html_repository.py) vastaa tiedostopolkujen tallettamisesta SQLite-tietokantaan. Tiedostopolut talletetaan [initialize_database.py](/initialize_database.py)-tiedostossa luotuun documents-tauluun. 
+
+```mermaid
+sequenceDiagram
+    participant U as User
+    participant GUI as GUI MainApplication
+    participant HB as HtmlBuilder
+    participant DB as Save
+
+    U->>GUI: Kirjoitetaan dokumentin nimi ja tallennetaan
+    GUI->>HB: html_document(root, name)
+    Note right of HB: Generate HTML<br>and create document
+    HB->>HB: create_html_file(html, name)
+    Note right of HB: Tallenna HTML levylle
+    HB->>DB: create(file_path)
+    Note right of DB: Talleta tiedostopolku tietokantaan
+    DB-->>HB: Palauta tiedostopolku
+    HB-->>GUI: Palauta HTML
+```
+- Käyttäjä nimeää muokkaamansa html-dokumentin ja painaa "Tallenna dokumentti": Dokumentin tallettaminen paikallisen koneen levylle käynnistyy.
+- HtmlBuilder-luokka generoi ja tallettaa html-dokumenin tiedostoon. Tiedostopolku välitetään Save-luokalle: tiedostopolku talletetaan tietokantaan. 
