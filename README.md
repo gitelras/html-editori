@@ -2,14 +2,14 @@
 
 Sovellusta käytetään **HTML-dokumentin** tekemiseen. Käyttäjä voi luoda graafisella käyttöliittymällä mieleisensä _staattisen nettisivun_. 
 
+- [Release](https://github.com/gitelras/ot-harjoitustyo/releases/tag/viikko7)
 - [Käyttöohje](/dokumentaatio/kayttoohje.md)
 - [Vaatimusmäärittely](/dokumentaatio/vaatimusmaarittely.md)
-- [Changelog](/dokumentaatio/changelog.md)
-- [Tuntikirjanpito](/dokumentaatio/tuntikirjanpito.md)
 - [Arkkitehtuurikuvaus](/dokumentaatio/arkkitehtuuri.md)
 - [Testausdokumentti](/dokumentaatio/testaus.md)
-- [Release](https://github.com/gitelras/ot-harjoitustyo/releases/tag/viikko7)
-  
+- [Changelog](/dokumentaatio/changelog.md)
+- [Tuntikirjanpito](/dokumentaatio/tuntikirjanpito.md)
+
 ## Käynnistä sovellus
 
 Asenna projektin riippuvuudet
