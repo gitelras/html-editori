@@ -8,7 +8,7 @@ Sovellusta käytetään **HTML-dokumentin** tekemiseen. Käyttäjä voi luoda gr
 - [Tuntikirjanpito](/dokumentaatio/tuntikirjanpito.md)
 - [Arkkitehtuurikuvaus](/dokumentaatio/arkkitehtuuri.md)
 - [Testausdokumentti](/dokumentaatio/testaus.md)
-- [Release](https://github.com/gitelras/ot-harjoitustyo/releases/tag/viikko6)
+- [Release](https://github.com/gitelras/ot-harjoitustyo/releases/tag/viikko7)
   
 ## Käynnistä sovellus
 
