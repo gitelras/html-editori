@@ -1,4 +1,4 @@
-## Rakenne
+## Sovelluksen rakenne
 
 Koodin pakkausrakenne näyttää tältä:
 
