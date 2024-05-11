@@ -70,7 +70,7 @@ class TreeBuilder:
             node.add_child(child_1)
             node.add_child(child_2)
             node.add_child(child_3)
-      
+
         return root
 
     def create_menu_tree(self):

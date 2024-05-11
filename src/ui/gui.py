@@ -10,6 +10,9 @@ import tempfile
 # generoitu koodi alkaa
 
 class MainApplication(Frame):
+    """
+        Vastaa graafisesta käyttöliittymästä.
+    """
     def __init__(self, master=None):
         super().__init__(master)
         self.master = master

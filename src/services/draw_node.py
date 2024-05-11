@@ -124,7 +124,7 @@ class DrawNode:
                 else:
                     child_x += child_width
         return None
-        
+
     def change_colors(self, node, color):
         """
         Vaihtaa puun solmujen värin.
@@ -133,7 +133,7 @@ class DrawNode:
         node.color = color
         for child in node.children:
             self.change_colors(child, color)
-    
+
     def change_backround_color(self, color_code):
         self.change_colors(self.root_node, color_code)
         self.draw_tree()
