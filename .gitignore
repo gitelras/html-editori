@@ -6,4 +6,3 @@ htmlcov
 data/database.sqlite
 data/test-database.sqlite
 *.html
-report.png
