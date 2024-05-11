@@ -27,3 +27,12 @@
 - Testattu html-dokumentin generoimista.
 - Tietokantayhteys luotu.
 - Save-luokka tallettaa tietokantaan html-dokumentin polun.
+
+## Viikko 7
+
+- Käyttäjä voi nimetä html-dokumentin ja tallettaa sen paikallisen koneen levylle.
+- Käyttäjän luomat dokumentit näkyvät sovelluksessa.
+- Käyttäjä voi valita layoutin valmiista pohjista ja muuttaa sen taustaväriä.
+- Testattu tietokantayhteyttä.
+- Otettu käyttöön Pillow-kirjasto.
+  
