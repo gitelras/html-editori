@@ -19,7 +19,6 @@ class HtmlBuilder:
             joka tarjoaa metodit HTML-tiedostojen käsittelyyn.
                 Oletuksena käytetään default_html_repositoryä.
         """
-        self.text = ""
         self.html_repository = html_repository
 
     def generate_html(self, node, width=100, height=100, x_offset=0, y_offset=0):
@@ -120,6 +119,11 @@ class HtmlBuilder:
         return file_path
 
     def all_files(self):
+        """
+        Returns: Lista tietokantaoliosta, 
+        jotka sisältävät tiedostopolun.
+
+        """
         return default_html_repository.get_files()
 
 # generoitu koodi päättyy

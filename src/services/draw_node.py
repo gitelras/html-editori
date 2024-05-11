@@ -2,7 +2,7 @@ from services.tree_builder import TreeBuilder
 # generoitu koodi alkaa
 class DrawNode:
     """
-    Luokka, joka vastaa puun solmujen piirtämisestä ja hallinnasta käyttöliittymässä.
+    Luokka, joka vastaa puun solmujen piirtämisestä.
 
     Attributes:
         master (Tk widget): Pääikkuna tai vanhempi widget, johon tämä komponentti kuuluu.
@@ -41,6 +41,12 @@ class DrawNode:
         self.entry = entry
 
     def draw_layout(self, layout_name):
+        """
+        Piirtää puun canvakselle.
+
+        Args:
+            layout_name: Nimi, joka yksilöi layoutin.
+        """
         trees = {"Layout 1": self.tree_builder.create_apple_tree,
                  "Layout 2": self.tree_builder.create_menu_tree,
                  "Layout 3": self.tree_builder.create_lemon_tree}
@@ -59,23 +65,16 @@ class DrawNode:
         Args:
             event (Event): Tapahtumaobjekti, joka sisältää klikkauksen tiedot.
         """
-        print(f"Klikattiin koordinaateissa: ({event.x}, {event.y})")
         result_node = self.get_node(self.root_node, 0, 0,
                                     self.canvas_width, self.canvas_height, (event.x, event.y))
         if result_node:
-            print(f"Klikattu solmu: {result_node}")
-            print(result_node.color)
             self.active_node = result_node
-        else:
-            print("Klikkaus ei osunut mihinkään solmuun.")
 
     def on_entry_return(self, _):
         """
         Päivittää aktiivisen solmun tekstiä, fonttia ja tekstiväriä, 
         kun syötekentässä painetaan Enter.
 
-        Args:
-            _ (Event): Tapahtumaobjekti, ei käytetä.
         """
         if self.active_node:
             self.active_node.text_color = self.selected_color
@@ -127,6 +126,10 @@ class DrawNode:
         return None
         
     def change_colors(self, node, color):
+        """
+        Vaihtaa puun solmujen värin.
+        
+        """
         node.color = color
         for child in node.children:
             self.change_colors(child, color)

@@ -1,6 +1,6 @@
 class Node:
     """
-    Edustaa yksittäistä solmua puurakenteessa. 
+    Yksittäinen solmu puurakenteessa. 
     Solmu voi sisältää lapsisolmuja ja se voi olla joko pysty- tai vaakasuuntainen.
 
     Attributes:

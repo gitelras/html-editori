@@ -15,7 +15,7 @@ class Save:
         self._connection = connection
 
     def create(self, path):
-        """Tallentaa käyttäjän tietokantaan.
+        """Tallentaa tiedostopolun tietokantaan.
 
         Args:
             path: Tallennettava tiedostopolku.
@@ -36,6 +36,11 @@ class Save:
         return path
 
     def get_files(self):
+        """Hakee tiedostopolut tietokannasta.
+
+        Returns:
+            Tiedostopolut.
+        """
         cursor = self._connection.cursor()
         result = cursor.execute(
             "select * from documents"
