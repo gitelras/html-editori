@@ -18,7 +18,7 @@ Ohjelman testaus koostuu automatisoidusta yksikkö- ja integraatiotestauksesta s
 
 - Sovellus on käynnistetty ja sitä on käytetty [käyttöohjeen](/dokumentaatio/kayttohje.md) mukaisella tavalla macOS- ja Linux-ympäristössä. 
 
-- Kaikki [vaatimussmäärittelyssä](/dokumentaatio/kayttohje.md) mainitut toiminnallisuudet on testattu erilaisilla skenaariolla.
+- Kaikki [vaatimusmäärittelyssä](/dokumentaatio/kayttohje.md) mainitut toiminnallisuudet on testattu erilaisilla skenaariolla.
 
 - Sovellusta on testattu tilanteissa, missä käyttäjä on nimennyt html-dokumentin tai jättänyt sen nimeämättä. 
 
