@@ -1,4 +1,4 @@
-# HTML-editori
+# 💥 HTML-editori
 
 Sovellusta käytetään **HTML-dokumentin** tekemiseen. Käyttäjä voi luoda graafisella käyttöliittymällä mieleisensä _staattisen nettisivun_. 
 
