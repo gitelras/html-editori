@@ -23,3 +23,10 @@ Ohjelman testaus koostuu automatisoidusta yksikkö- ja integraatiotestauksesta s
 - Sovellusta on testattu tilanteissa, missä käyttäjä on nimennyt html-dokumentin tai jättänyt sen nimeämättä. 
 
 - Sovelluksen tietokantakonfiguraatiota on testattu.
+
+## Testikattavuus
+
+Sovelluksen haarautumiskattavuus on 76% käyttöliittymää lukuunottamatta. Testauksen ulkopuolelle jäi sisäkkäisten div-elementtien luonti ja aktiivisen alueen tietojen päivittäminen. 
+
+![Raportin kuva](/report.png "Raportti")
+
