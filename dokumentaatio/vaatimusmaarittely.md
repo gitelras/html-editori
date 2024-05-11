@@ -20,9 +20,9 @@ Sovellusta käytetään **HTML-dokumentin** tekemiseen. Käyttäjä voi luoda gr
 - Sovellus toimii Linux- ja OSX-käyttöjärjestelmillä varustetuissa koneissa
 - Käyttäjän luomat dokumentit talletetaan paikallisen koneen levylle
 
-## Jatkokehitys
+## Jatkokehitysideoita
 
-- Aktiivisen tekstialueen korostaminen
+- Aktiivisen tekstialueen korostaminen.
 - Tekstin asettelu ylhäälle, alhaalle, oikealle, vasemmalle ja keskelle.
 - Tekstin automaattinen rivinvaihto.
 - Mahdollisuus muokata vanhoja dokumentteja.
