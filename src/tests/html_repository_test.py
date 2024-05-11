@@ -6,7 +6,6 @@ from database_connection import get_database_connection
 
 class TestHtmlRepository(unittest.TestCase):
     def setUp(self):
-        #os.environ['DATABASE_FILENAME'] = 'test-database.sqlite'
         self.save = Save(get_database_connection())
         self.save.delete_all()
         self.html_builder = HtmlBuilder()

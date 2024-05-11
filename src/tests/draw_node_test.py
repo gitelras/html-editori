@@ -20,8 +20,6 @@ class TestDrawnode(unittest.TestCase):
 
     def test_draw_root_right(self):
         self.node.add_child(self.node_child)
-        #self.node.add_child(self.node_horisontal_child)
-        #self.node_horisontal_child.add_child(self.node2)
         self.node.color = "red"
         self.draw_node.draw_node(self.canvas, self.node, 0, 0, 800, 600)
         self.tk.update()

@@ -2,7 +2,7 @@ import unittest
 from services.html_builder import HtmlBuilder
 from entities.node import Node
 
-class TestTreeBuilder(unittest.TestCase):
+class TestHtmlBuilder(unittest.TestCase):
     def setUp(self):
         self.html_builder = HtmlBuilder()
         self.node = Node(100, True)
